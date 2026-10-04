@@ -37,7 +37,7 @@ Every new PowerShell window then sets the value to 0 if it is not 0 already. It 
 |---|---|
 | Registry `HKCU\Control Panel\Desktop\ForegroundLockTimeout = 0` | Overwritten at every logon (see below). Here the registry held 0 while the live value read 2147483647 after the restart. |
 | `SystemParametersInfo(..., SPIF_UPDATEINIFILE)` once | Works until the next logon, then the same overwrite. |
-| A Startup-folder shortcut that sets it at logon | Worked once (3 Oct), failed on the next boot (4 Oct): Windows started it about a minute after logon, another window already had focus, and all 25 attempts got error 87. |
+| A Startup-folder shortcut that sets it at logon | Unreliable: reported success on 2 of 3 boots, failed on the other (Windows started it about a minute after logon, another window already had focus, and all 25 attempts got error 87). |
 
 ## Root cause, read from the code
 
@@ -75,6 +75,9 @@ Whatever the registry says, the live value after logon is 2147483647, the settin
 | After the fix: 100,000 `cmd /c cmd /c rem` pairs in 9.2 min | Toke **+176** (leaking: about +100,000) |
 | After the fix, three runs of 300 pairs | +133, +14, +1 |
 | Profile fix: value set to 2147483647, then a new PowerShell tab opened | `2147483647 -> 0` |
+| After a real restart (see note) | live 0; two runs of 300 pairs: −31, −25 |
+
+Note on the restart test: the first PowerShell window opened 47 s after boot and the live value was 0 afterwards. An older Startup-folder script was still installed and also reported success 19 s later, so this restart alone does not show which of the two set it; the profile was shown to work on its own by the `--set 2147483647` test above.
 
 ## Not established
 
