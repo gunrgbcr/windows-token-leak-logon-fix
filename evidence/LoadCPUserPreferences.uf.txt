@@ -1,0 +1,182 @@
+﻿0:000> uf win32kfull!LoadCPUserPreferences; q
+win32kfull!LoadCPUserPreferences:
+00000001`4025e0c8 48895c2408      mov     qword ptr [rsp+8],rbx
+00000001`4025e0cd 48896c2410      mov     qword ptr [rsp+10h],rbp
+00000001`4025e0d2 56              push    rsi
+00000001`4025e0d3 57              push    rdi
+00000001`4025e0d4 4156            push    r14
+00000001`4025e0d6 4883ec40        sub     rsp,40h
+00000001`4025e0da 8bf2            mov     esi,edx
+00000001`4025e0dc 488be9          mov     rbp,rcx
+00000001`4025e0df 48ff158a7f1700  call    qword ptr [win32kfull!_imp_W32GetUserSessionState (00000001`403d6070)]
+00000001`4025e0e6 0f1f440000      nop     dword ptr [rax+rax]
+00000001`4025e0eb 89742430        mov     dword ptr [rsp+30h],esi
+00000001`4025e0ef 41be08000000    mov     r14d,8
+00000001`4025e0f5 488bd8          mov     rbx,rax
+00000001`4025e0f8 4489742428      mov     dword ptr [rsp+28h],r14d
+00000001`4025e0fd 488d442470      lea     rax,[rsp+70h]
+00000001`4025e102 4533c9          xor     r9d,r9d
+00000001`4025e105 488bcd          mov     rcx,rbp
+00000001`4025e108 4889442420      mov     qword ptr [rsp+20h],rax
+00000001`4025e10d 4c8b83880a0100  mov     r8,qword ptr [rbx+10A88h]
+00000001`4025e114 8b93840a0100    mov     edx,dword ptr [rbx+10A84h]
+00000001`4025e11a 48ff157faf1700  call    qword ptr [win32kfull!_imp_FastGetProfileValue (00000001`403d90a0)]
+00000001`4025e121 0f1f440000      nop     dword ptr [rax+rax]
+00000001`4025e126 85c0            test    eax,eax
+00000001`4025e128 741b            je      win32kfull!LoadCPUserPreferences+0x7d (00000001`4025e145)
+
+win32kfull!LoadCPUserPreferences+0x62:
+00000001`4025e12a 413bc6          cmp     eax,r14d
+00000001`4025e12d 488d8b740a0100  lea     rcx,[rbx+10A74h]
+00000001`4025e134 488d542470      lea     rdx,[rsp+70h]
+00000001`4025e139 410f47c6        cmova   eax,r14d
+00000001`4025e13d 448bc0          mov     r8d,eax
+00000001`4025e140 e8fbcf0f00      call    win32kfull!memcpy (00000001`4035b140)
+
+win32kfull!LoadCPUserPreferences+0x7d:
+00000001`4025e145 bf1d000000      mov     edi,1Dh
+00000001`4025e14a 4881c3900a0100  add     rbx,10A90h
+
+win32kfull!LoadCPUserPreferences+0x89:
+00000001`4025e151 4c8b4308        mov     r8,qword ptr [rbx+8]
+00000001`4025e155 488d442470      lea     rax,[rsp+70h]
+00000001`4025e15a 8b5304          mov     edx,dword ptr [rbx+4]
+00000001`4025e15d 4533c9          xor     r9d,r9d
+00000001`4025e160 89742430        mov     dword ptr [rsp+30h],esi
+00000001`4025e164 488bcd          mov     rcx,rbp
+00000001`4025e167 c744242804000000 mov     dword ptr [rsp+28h],4
+00000001`4025e16f 4889442420      mov     qword ptr [rsp+20h],rax
+00000001`4025e174 48ff1525af1700  call    qword ptr [win32kfull!_imp_FastGetProfileValue (00000001`403d90a0)]
+00000001`4025e17b 0f1f440000      nop     dword ptr [rax+rax]
+00000001`4025e180 85c0            test    eax,eax
+00000001`4025e182 7406            je      win32kfull!LoadCPUserPreferences+0xc2 (00000001`4025e18a)
+
+win32kfull!LoadCPUserPreferences+0xbc:
+00000001`4025e184 8b442470        mov     eax,dword ptr [rsp+70h]
+00000001`4025e188 8903            mov     dword ptr [rbx],eax
+
+win32kfull!LoadCPUserPreferences+0xc2:
+00000001`4025e18a 4883c310        add     rbx,10h
+00000001`4025e18e 4883ef01        sub     rdi,1
+00000001`4025e192 75bd            jne     win32kfull!LoadCPUserPreferences+0x89 (00000001`4025e151)
+
+win32kfull!LoadCPUserPreferences+0xcc:
+00000001`4025e194 48ff15d57e1700  call    qword ptr [win32kfull!_imp_W32GetUserSessionState (00000001`403d6070)]
+00000001`4025e19b 0f1f440000      nop     dword ptr [rax+rax]
+00000001`4025e1a0 488b9840520000  mov     rbx,qword ptr [rax+5240h]
+00000001`4025e1a7 48ff15c27e1700  call    qword ptr [win32kfull!_imp_W32GetUserSessionState (00000001`403d6070)]
+00000001`4025e1ae 0f1f440000      nop     dword ptr [rax+rax]
+00000001`4025e1b3 8b9b5c1b0000    mov     ebx,dword ptr [rbx+1B5Ch]
+00000001`4025e1b9 bf740a0100      mov     edi,10A74h
+00000001`4025e1be 331c38          xor     ebx,dword ptr [rax+rdi]
+00000001`4025e1c1 83e304          and     ebx,4
+00000001`4025e1c4 48ff15a57e1700  call    qword ptr [win32kfull!_imp_W32GetUserSessionState (00000001`403d6070)]
+00000001`4025e1cb 0f1f440000      nop     dword ptr [rax+rax]
+00000001`4025e1d0 be5c1b0000      mov     esi,1B5Ch
+00000001`4025e1d5 488b8840520000  mov     rcx,qword ptr [rax+5240h]
+00000001`4025e1dc 311c31          xor     dword ptr [rcx+rsi],ebx
+00000001`4025e1df 48ff158a7e1700  call    qword ptr [win32kfull!_imp_W32GetUserSessionState (00000001`403d6070)]
+00000001`4025e1e6 0f1f440000      nop     dword ptr [rax+rax]
+00000001`4025e1eb 488b9840520000  mov     rbx,qword ptr [rax+5240h]
+00000001`4025e1f2 48ff15777e1700  call    qword ptr [win32kfull!_imp_W32GetUserSessionState (00000001`403d6070)]
+00000001`4025e1f9 0f1f440000      nop     dword ptr [rax+rax]
+00000001`4025e1fe 8b9b5c1b0000    mov     ebx,dword ptr [rbx+1B5Ch]
+00000001`4025e204 331c38          xor     ebx,dword ptr [rax+rdi]
+00000001`4025e207 4123de          and     ebx,r14d
+00000001`4025e20a 48ff155f7e1700  call    qword ptr [win32kfull!_imp_W32GetUserSessionState (00000001`403d6070)]
+00000001`4025e211 0f1f440000      nop     dword ptr [rax+rax]
+00000001`4025e216 488b8840520000  mov     rcx,qword ptr [rax+5240h]
+00000001`4025e21d 311c31          xor     dword ptr [rcx+rsi],ebx
+00000001`4025e220 48ff15497e1700  call    qword ptr [win32kfull!_imp_W32GetUserSessionState (00000001`403d6070)]
+00000001`4025e227 0f1f440000      nop     dword ptr [rax+rax]
+00000001`4025e22c 488b9840520000  mov     rbx,qword ptr [rax+5240h]
+00000001`4025e233 48ff15367e1700  call    qword ptr [win32kfull!_imp_W32GetUserSessionState (00000001`403d6070)]
+00000001`4025e23a 0f1f440000      nop     dword ptr [rax+rax]
+00000001`4025e23f 8b9b5c1b0000    mov     ebx,dword ptr [rbx+1B5Ch]
+00000001`4025e245 331c38          xor     ebx,dword ptr [rax+rdi]
+00000001`4025e248 83e320          and     ebx,20h
+00000001`4025e24b 48ff151e7e1700  call    qword ptr [win32kfull!_imp_W32GetUserSessionState (00000001`403d6070)]
+00000001`4025e252 0f1f440000      nop     dword ptr [rax+rax]
+00000001`4025e257 488b8840520000  mov     rcx,qword ptr [rax+5240h]
+00000001`4025e25e 311c31          xor     dword ptr [rcx+rsi],ebx
+00000001`4025e261 48ff15087e1700  call    qword ptr [win32kfull!_imp_W32GetUserSessionState (00000001`403d6070)]
+00000001`4025e268 0f1f440000      nop     dword ptr [rax+rax]
+00000001`4025e26d f780700a010000000200 test dword ptr [rax+10A70h],20000h
+00000001`4025e277 741c            je      win32kfull!LoadCPUserPreferences+0x1cd (00000001`4025e295)
+
+win32kfull!LoadCPUserPreferences+0x1b1:
+00000001`4025e279 48ff15f07d1700  call    qword ptr [win32kfull!_imp_W32GetUserSessionState (00000001`403d6070)]
+00000001`4025e280 0f1f440000      nop     dword ptr [rax+rax]
+00000001`4025e285 488b8840520000  mov     rcx,qword ptr [rax+5240h]
+00000001`4025e28c f0810980000000  lock or dword ptr [rcx],80h
+00000001`4025e293 eb1a            jmp     win32kfull!LoadCPUserPreferences+0x1e7 (00000001`4025e2af)
+
+win32kfull!LoadCPUserPreferences+0x1cd:
+00000001`4025e295 48ff15d47d1700  call    qword ptr [win32kfull!_imp_W32GetUserSessionState (00000001`403d6070)]
+00000001`4025e29c 0f1f440000      nop     dword ptr [rax+rax]
+00000001`4025e2a1 488b8840520000  mov     rcx,qword ptr [rax+5240h]
+00000001`4025e2a8 f081217fffffff  lock and dword ptr [rcx],0FFFFFF7Fh
+
+win32kfull!LoadCPUserPreferences+0x1e7:
+00000001`4025e2af b906200000      mov     ecx,2006h
+00000001`4025e2b4 48ff1525b31700  call    qword ptr [win32kfull!_imp_UPDWORDPointer (00000001`403d95e0)]
+00000001`4025e2bb 0f1f440000      nop     dword ptr [rax+rax]
+00000001`4025e2c0 8b18            mov     ebx,dword ptr [rax]
+00000001`4025e2c2 48ff15a77d1700  call    qword ptr [win32kfull!_imp_W32GetUserSessionState (00000001`403d6070)]
+00000001`4025e2c9 0f1f440000      nop     dword ptr [rax+rax]
+00000001`4025e2ce 488b8840520000  mov     rcx,qword ptr [rax+5240h]
+00000001`4025e2d5 8999601b0000    mov     dword ptr [rcx+1B60h],ebx
+00000001`4025e2db b90e200000      mov     ecx,200Eh
+00000001`4025e2e0 48ff15f9b21700  call    qword ptr [win32kfull!_imp_UPDWORDPointer (00000001`403d95e0)]
+00000001`4025e2e7 0f1f440000      nop     dword ptr [rax+rax]
+00000001`4025e2ec 8b18            mov     ebx,dword ptr [rax]
+00000001`4025e2ee 48ff157b7d1700  call    qword ptr [win32kfull!_imp_W32GetUserSessionState (00000001`403d6070)]
+00000001`4025e2f5 0f1f440000      nop     dword ptr [rax+rax]
+00000001`4025e2fa 488b8840520000  mov     rcx,qword ptr [rax+5240h]
+00000001`4025e301 8999b4080000    mov     dword ptr [rcx+8B4h],ebx
+00000001`4025e307 b910200000      mov     ecx,2010h
+00000001`4025e30c 48ff15cdb21700  call    qword ptr [win32kfull!_imp_UPDWORDPointer (00000001`403d95e0)]
+00000001`4025e313 0f1f440000      nop     dword ptr [rax+rax]
+00000001`4025e318 8b18            mov     ebx,dword ptr [rax]
+00000001`4025e31a 48ff154f7d1700  call    qword ptr [win32kfull!_imp_W32GetUserSessionState (00000001`403d6070)]
+00000001`4025e321 0f1f440000      nop     dword ptr [rax+rax]
+00000001`4025e326 488b8840520000  mov     rcx,qword ptr [rax+5240h]
+00000001`4025e32d 8999b8080000    mov     dword ptr [rcx+8B8h],ebx
+00000001`4025e333 48ff15367d1700  call    qword ptr [win32kfull!_imp_W32GetUserSessionState (00000001`403d6070)]
+00000001`4025e33a 0f1f440000      nop     dword ptr [rax+rax]
+00000001`4025e33f 488b9840520000  mov     rbx,qword ptr [rax+5240h]
+00000001`4025e346 48ff15237d1700  call    qword ptr [win32kfull!_imp_W32GetUserSessionState (00000001`403d6070)]
+00000001`4025e34d 0f1f440000      nop     dword ptr [rax+rax]
+00000001`4025e352 8b9b5c1b0000    mov     ebx,dword ptr [rbx+1B5Ch]
+00000001`4025e358 331c38          xor     ebx,dword ptr [rax+rdi]
+00000001`4025e35b 81e300000080    and     ebx,80000000h
+00000001`4025e361 48ff15087d1700  call    qword ptr [win32kfull!_imp_W32GetUserSessionState (00000001`403d6070)]
+00000001`4025e368 0f1f440000      nop     dword ptr [rax+rax]
+00000001`4025e36d 488b8840520000  mov     rcx,qword ptr [rax+5240h]
+00000001`4025e374 311c31          xor     dword ptr [rcx+rsi],ebx
+00000001`4025e377 48ff15c2b51700  call    qword ptr [win32kfull!_imp_EnforceColorDependentSettings (00000001`403d9940)]
+00000001`4025e37e 0f1f440000      nop     dword ptr [rax+rax]
+00000001`4025e383 b901200000      mov     ecx,2001h
+00000001`4025e388 48ff1551b21700  call    qword ptr [win32kfull!_imp_UPDWORDPointer (00000001`403d95e0)]
+00000001`4025e38f 0f1f440000      nop     dword ptr [rax+rax]
+00000001`4025e394 c700ffffff7f    mov     dword ptr [rax],7FFFFFFFh
+00000001`4025e39a e829520300      call    win32kfull!Feature_FindMyMouse_Prototype__private_IsEnabledDeviceUsageNoInline (00000001`402935c8)
+00000001`4025e39f 85c0            test    eax,eax
+00000001`4025e3a1 7414            je      win32kfull!LoadCPUserPreferences+0x2ef (00000001`4025e3b7)
+
+win32kfull!LoadCPUserPreferences+0x2db:
+00000001`4025e3a3 b938200000      mov     ecx,2038h
+00000001`4025e3a8 48ff1531b21700  call    qword ptr [win32kfull!_imp_UPDWORDPointer (00000001`403d95e0)]
+00000001`4025e3af 0f1f440000      nop     dword ptr [rax+rax]
+00000001`4025e3b4 8320fd          and     dword ptr [rax],0FFFFFFFDh
+
+win32kfull!LoadCPUserPreferences+0x2ef:
+00000001`4025e3b7 488b5c2460      mov     rbx,qword ptr [rsp+60h]
+00000001`4025e3bc b801000000      mov     eax,1
+00000001`4025e3c1 488b6c2468      mov     rbp,qword ptr [rsp+68h]
+00000001`4025e3c6 4883c440        add     rsp,40h
+00000001`4025e3ca 415e            pop     r14
+00000001`4025e3cc 5f              pop     rdi
+00000001`4025e3cd 5e              pop     rsi
+00000001`4025e3ce c3              ret
+quit:

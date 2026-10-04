@@ -1,0 +1,97 @@
+
+************* Path validation summary **************
+Response                         Time (ms)     Location
+Deferred                                       srv*C:\Symbols*https://msdl.microsoft.com/download/symbols
+Opened log file '<log>'
+
+************* Preparing the environment for Debugger Extensions Gallery repositories **************
+   ExtensionRepository : Implicit
+   UseExperimentalFeatureForNugetShare : true
+   AllowNugetExeUpdate : true
+   NonInteractiveNuget : true
+   AllowNugetMSCredentialProviderInstall : true
+   AllowParallelInitializationOfLocalRepositories : true
+
+   -- Configuring repositories
+      ----> Repository : LocalInstalled, Enabled: true
+      ----> Repository : UserExtensions, Enabled: true
+
+>>>>>>>>>>>>> Preparing the environment for Debugger Extensions Gallery repositories completed, duration 0.000 seconds
+
+************* Waiting for Debugger Extensions Gallery to Initialize **************
+
+>>>>>>>>>>>>> Waiting for Debugger Extensions Gallery to Initialize completed, duration 0.016 seconds
+   ----> Repository : UserExtensions, Enabled: true, Packages count: 0
+   ----> Repository : LocalInstalled, Enabled: true, Packages count: 46
+
+Microsoft (R) Windows Debugger Version 10.0.29617.1000 AMD64
+Copyright (c) Microsoft Corporation. All rights reserved.
+
+
+Loading Dump File [<LiveDump.dmp>]
+
+************* Path validation summary **************
+Response                         Time (ms)     Location
+Deferred                                       srv*C:\Symbols*https://msdl.microsoft.com/download/symbols
+Symbol search path is: srv*C:\Symbols*https://msdl.microsoft.com/download/symbols
+Executable search path is: 
+NatVis script successfully loaded from 'C:\Program Files\WindowsApps\Microsoft.WinDbg_1.2606.22001.0_x64__8wekyb3d8bbwe\amd64\Visualizers\atlmfc.natvis'
+NatVis script successfully loaded from 'C:\Program Files\WindowsApps\Microsoft.WinDbg_1.2606.22001.0_x64__8wekyb3d8bbwe\amd64\Visualizers\concurrency.natvis'
+NatVis script successfully loaded from 'C:\Program Files\WindowsApps\Microsoft.WinDbg_1.2606.22001.0_x64__8wekyb3d8bbwe\amd64\Visualizers\cpp_rest.natvis'
+NatVis script successfully loaded from 'C:\Program Files\WindowsApps\Microsoft.WinDbg_1.2606.22001.0_x64__8wekyb3d8bbwe\amd64\Visualizers\ObjectiveC.natvis'
+NatVis script successfully loaded from 'C:\Program Files\WindowsApps\Microsoft.WinDbg_1.2606.22001.0_x64__8wekyb3d8bbwe\amd64\Visualizers\stl.natvis'
+NatVis script successfully loaded from 'C:\Program Files\WindowsApps\Microsoft.WinDbg_1.2606.22001.0_x64__8wekyb3d8bbwe\amd64\Visualizers\Windows.Data.Json.natvis'
+NatVis script successfully loaded from 'C:\Program Files\WindowsApps\Microsoft.WinDbg_1.2606.22001.0_x64__8wekyb3d8bbwe\amd64\Visualizers\Windows.Devices.Geolocation.natvis'
+NatVis script successfully loaded from 'C:\Program Files\WindowsApps\Microsoft.WinDbg_1.2606.22001.0_x64__8wekyb3d8bbwe\amd64\Visualizers\Windows.Devices.Sensors.natvis'
+NatVis script successfully loaded from 'C:\Program Files\WindowsApps\Microsoft.WinDbg_1.2606.22001.0_x64__8wekyb3d8bbwe\amd64\Visualizers\Windows.Media.natvis'
+NatVis script successfully loaded from 'C:\Program Files\WindowsApps\Microsoft.WinDbg_1.2606.22001.0_x64__8wekyb3d8bbwe\amd64\Visualizers\windows.natvis'
+NatVis script successfully loaded from 'C:\Program Files\WindowsApps\Microsoft.WinDbg_1.2606.22001.0_x64__8wekyb3d8bbwe\amd64\Visualizers\winrt.natvis'
+ModLoad: 00000001`40000000 00000001`40430000   C:\Windows\System32\win32kfull.sys
+win32kfull!GsDriverEntry:
+00000001`40406010 48895c2408      mov     qword ptr [rsp+8],rbx ss:00000000`00000008=????????????????
+0:000> u win32kfull!xxxUpdatePerUserSystemParameters+0xae0 L20; q
+win32kfull!xxxUpdatePerUserSystemParameters+0xae0:
+00000001`40229c10 5c              pop     rsp
+00000001`40229c11 c4              ???
+00000001`40229c12 1a00            sbb     al,byte ptr [rax]
+00000001`40229c14 0f1f440000      nop     dword ptr [rax+rax]
+00000001`40229c19 488b88f00b0000  mov     rcx,qword ptr [rax+0BF0h]
+00000001`40229c20 48ff15c1d31a00  call    qword ptr [win32kfull!_imp_?UpdateWakeOnInputDeviceTypesFromRegistryCInputGlobalsQEAAXXZ (00000001`403d6fe8)]
+00000001`40229c27 0f1f440000      nop     dword ptr [rax+rax]
+00000001`40229c2c 8bd6            mov     edx,esi
+00000001`40229c2e 488bcf          mov     rcx,rdi
+00000001`40229c31 e892440300      call    win32kfull!LoadCPUserPreferences (00000001`4025e0c8)
+00000001`40229c36 4585ed          test    r13d,r13d
+00000001`40229c39 0f8517020000    jne     win32kfull!xxxUpdatePerUserSystemParameters+0xd26 (00000001`40229e56)
+00000001`40229c3f 488bcf          mov     rcx,rdi
+00000001`40229c42 48ff15a7d31a00  call    qword ptr [win32kfull!_imp_xxxODI_ColorInit (00000001`403d6ff0)]
+00000001`40229c49 0f1f440000      nop     dword ptr [rax+rax]
+00000001`40229c4e 488bcf          mov     rcx,rdi
+00000001`40229c51 e87e6cfeff      call    win32kfull!LW_LoadResources (00000001`402108d4)
+00000001`40229c56 e86128dfff      call    win32kfull!GreTextInitialized (00000001`4001c4bc)
+00000001`40229c5b 85c0            test    eax,eax
+00000001`40229c5d 740e            je      win32kfull!xxxUpdatePerUserSystemParameters+0xb3d (00000001`40229c6d)
+00000001`40229c5f 4183c8ff        or      r8d,0FFFFFFFFh
+00000001`40229c63 33d2            xor     edx,edx
+00000001`40229c65 488bcf          mov     rcx,rdi
+00000001`40229c68 e84b74f8ff      call    win32kfull!xxxSetWindowNCMetrics (00000001`401b10b8)
+00000001`40229c6d 33d2            xor     edx,edx
+00000001`40229c6f 488bcf          mov     rcx,rdi
+00000001`40229c72 e8456df8ff      call    win32kfull!SetMinMetrics (00000001`401b09bc)
+00000001`40229c77 33d2            xor     edx,edx
+00000001`40229c79 488bcf          mov     rcx,rdi
+00000001`40229c7c e80b6af8ff      call    win32kfull!SetIconMetrics (00000001`401b068c)
+00000001`40229c81 488bcf          mov     rcx,rdi
+00000001`40229c84 e8578b0000      call    win32kfull!GetKbdLangSwitch (00000001`402327e0)
+quit:
+NatVis script unloaded from 'C:\Program Files\WindowsApps\Microsoft.WinDbg_1.2606.22001.0_x64__8wekyb3d8bbwe\amd64\Visualizers\atlmfc.natvis'
+NatVis script unloaded from 'C:\Program Files\WindowsApps\Microsoft.WinDbg_1.2606.22001.0_x64__8wekyb3d8bbwe\amd64\Visualizers\concurrency.natvis'
+NatVis script unloaded from 'C:\Program Files\WindowsApps\Microsoft.WinDbg_1.2606.22001.0_x64__8wekyb3d8bbwe\amd64\Visualizers\cpp_rest.natvis'
+NatVis script unloaded from 'C:\Program Files\WindowsApps\Microsoft.WinDbg_1.2606.22001.0_x64__8wekyb3d8bbwe\amd64\Visualizers\ObjectiveC.natvis'
+NatVis script unloaded from 'C:\Program Files\WindowsApps\Microsoft.WinDbg_1.2606.22001.0_x64__8wekyb3d8bbwe\amd64\Visualizers\stl.natvis'
+NatVis script unloaded from 'C:\Program Files\WindowsApps\Microsoft.WinDbg_1.2606.22001.0_x64__8wekyb3d8bbwe\amd64\Visualizers\Windows.Data.Json.natvis'
+NatVis script unloaded from 'C:\Program Files\WindowsApps\Microsoft.WinDbg_1.2606.22001.0_x64__8wekyb3d8bbwe\amd64\Visualizers\Windows.Devices.Geolocation.natvis'
+NatVis script unloaded from 'C:\Program Files\WindowsApps\Microsoft.WinDbg_1.2606.22001.0_x64__8wekyb3d8bbwe\amd64\Visualizers\Windows.Devices.Sensors.natvis'
+NatVis script unloaded from 'C:\Program Files\WindowsApps\Microsoft.WinDbg_1.2606.22001.0_x64__8wekyb3d8bbwe\amd64\Visualizers\Windows.Media.natvis'
+NatVis script unloaded from 'C:\Program Files\WindowsApps\Microsoft.WinDbg_1.2606.22001.0_x64__8wekyb3d8bbwe\amd64\Visualizers\windows.natvis'
+NatVis script unloaded from 'C:\Program Files\WindowsApps\Microsoft.WinDbg_1.2606.22001.0_x64__8wekyb3d8bbwe\amd64\Visualizers\winrt.natvis'

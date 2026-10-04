@@ -1,0 +1,234 @@
+
+************* Path validation summary **************
+Response                         Time (ms)     Location
+Deferred                                       srv*C:\Symbols*https://msdl.microsoft.com/download/symbols
+Opened log file '<log>'
+
+************* Preparing the environment for Debugger Extensions Gallery repositories **************
+   ExtensionRepository : Implicit
+   UseExperimentalFeatureForNugetShare : true
+   AllowNugetExeUpdate : true
+   NonInteractiveNuget : true
+   AllowNugetMSCredentialProviderInstall : true
+   AllowParallelInitializationOfLocalRepositories : true
+
+   -- Configuring repositories
+      ----> Repository : LocalInstalled, Enabled: true
+      ----> Repository : UserExtensions, Enabled: true
+
+>>>>>>>>>>>>> Preparing the environment for Debugger Extensions Gallery repositories completed, duration 0.000 seconds
+
+************* Waiting for Debugger Extensions Gallery to Initialize **************
+
+>>>>>>>>>>>>> Waiting for Debugger Extensions Gallery to Initialize completed, duration 0.015 seconds
+   ----> Repository : UserExtensions, Enabled: true, Packages count: 0
+   ----> Repository : LocalInstalled, Enabled: true, Packages count: 46
+
+Microsoft (R) Windows Debugger Version 10.0.29617.1000 AMD64
+Copyright (c) Microsoft Corporation. All rights reserved.
+
+
+Loading Dump File [<LiveDump.dmp>]
+
+************* Path validation summary **************
+Response                         Time (ms)     Location
+Deferred                                       srv*C:\Symbols*https://msdl.microsoft.com/download/symbols
+Symbol search path is: srv*C:\Symbols*https://msdl.microsoft.com/download/symbols
+Executable search path is: 
+NatVis script successfully loaded from 'C:\Program Files\WindowsApps\Microsoft.WinDbg_1.2606.22001.0_x64__8wekyb3d8bbwe\amd64\Visualizers\atlmfc.natvis'
+NatVis script successfully loaded from 'C:\Program Files\WindowsApps\Microsoft.WinDbg_1.2606.22001.0_x64__8wekyb3d8bbwe\amd64\Visualizers\concurrency.natvis'
+NatVis script successfully loaded from 'C:\Program Files\WindowsApps\Microsoft.WinDbg_1.2606.22001.0_x64__8wekyb3d8bbwe\amd64\Visualizers\cpp_rest.natvis'
+NatVis script successfully loaded from 'C:\Program Files\WindowsApps\Microsoft.WinDbg_1.2606.22001.0_x64__8wekyb3d8bbwe\amd64\Visualizers\ObjectiveC.natvis'
+NatVis script successfully loaded from 'C:\Program Files\WindowsApps\Microsoft.WinDbg_1.2606.22001.0_x64__8wekyb3d8bbwe\amd64\Visualizers\stl.natvis'
+NatVis script successfully loaded from 'C:\Program Files\WindowsApps\Microsoft.WinDbg_1.2606.22001.0_x64__8wekyb3d8bbwe\amd64\Visualizers\Windows.Data.Json.natvis'
+NatVis script successfully loaded from 'C:\Program Files\WindowsApps\Microsoft.WinDbg_1.2606.22001.0_x64__8wekyb3d8bbwe\amd64\Visualizers\Windows.Devices.Geolocation.natvis'
+NatVis script successfully loaded from 'C:\Program Files\WindowsApps\Microsoft.WinDbg_1.2606.22001.0_x64__8wekyb3d8bbwe\amd64\Visualizers\Windows.Devices.Sensors.natvis'
+NatVis script successfully loaded from 'C:\Program Files\WindowsApps\Microsoft.WinDbg_1.2606.22001.0_x64__8wekyb3d8bbwe\amd64\Visualizers\Windows.Media.natvis'
+NatVis script successfully loaded from 'C:\Program Files\WindowsApps\Microsoft.WinDbg_1.2606.22001.0_x64__8wekyb3d8bbwe\amd64\Visualizers\windows.natvis'
+NatVis script successfully loaded from 'C:\Program Files\WindowsApps\Microsoft.WinDbg_1.2606.22001.0_x64__8wekyb3d8bbwe\amd64\Visualizers\winrt.natvis'
+ModLoad: 00000001`40000000 00000001`40431000   C:\Windows\WinSxS\amd64_microsoft-windows-win32k_31bf3856ad364e35_10.0.26100.9444_none_54b90e334a8a3c7b\win32kfull.sys
+win32kfull!GsDriverEntry:
+00000001`40407010 48895c2408      mov     qword ptr [rsp+8],rbx ss:00000000`00000008=????????????????
+0:000> .reload /f; uf win32kfull!LoadCPUserPreferences; q
+.
+win32kfull!LoadCPUserPreferences:
+00000001`40266ebc 48895c2408      mov     qword ptr [rsp+8],rbx
+00000001`40266ec1 48896c2410      mov     qword ptr [rsp+10h],rbp
+00000001`40266ec6 56              push    rsi
+00000001`40266ec7 57              push    rdi
+00000001`40266ec8 4156            push    r14
+00000001`40266eca 4883ec40        sub     rsp,40h
+00000001`40266ece 8bf2            mov     esi,edx
+00000001`40266ed0 488be9          mov     rbp,rcx
+00000001`40266ed3 48ff1596011700  call    qword ptr [win32kfull!_imp_W32GetUserSessionState (00000001`403d7070)]
+00000001`40266eda 0f1f440000      nop     dword ptr [rax+rax]
+00000001`40266edf 89742430        mov     dword ptr [rsp+30h],esi
+00000001`40266ee3 41be08000000    mov     r14d,8
+00000001`40266ee9 488bd8          mov     rbx,rax
+00000001`40266eec 4489742428      mov     dword ptr [rsp+28h],r14d
+00000001`40266ef1 488d442470      lea     rax,[rsp+70h]
+00000001`40266ef6 4533c9          xor     r9d,r9d
+00000001`40266ef9 488bcd          mov     rcx,rbp
+00000001`40266efc 4889442420      mov     qword ptr [rsp+20h],rax
+00000001`40266f01 4c8b83900a0100  mov     r8,qword ptr [rbx+10A90h]
+00000001`40266f08 8b938c0a0100    mov     edx,dword ptr [rbx+10A8Ch]
+00000001`40266f0e 48ff1583311700  call    qword ptr [win32kfull!_imp_FastGetProfileValue (00000001`403da098)]
+00000001`40266f15 0f1f440000      nop     dword ptr [rax+rax]
+00000001`40266f1a 85c0            test    eax,eax
+00000001`40266f1c 741b            je      win32kfull!LoadCPUserPreferences+0x7d (00000001`40266f39)
+
+win32kfull!LoadCPUserPreferences+0x62:
+00000001`40266f1e 413bc6          cmp     eax,r14d
+00000001`40266f21 488d8b7c0a0100  lea     rcx,[rbx+10A7Ch]
+00000001`40266f28 488d542470      lea     rdx,[rsp+70h]
+00000001`40266f2d 410f47c6        cmova   eax,r14d
+00000001`40266f31 448bc0          mov     r8d,eax
+00000001`40266f34 e887570f00      call    win32kfull!memcpy (00000001`4035c6c0)
+
+win32kfull!LoadCPUserPreferences+0x7d:
+00000001`40266f39 bf1d000000      mov     edi,1Dh
+00000001`40266f3e 4881c3980a0100  add     rbx,10A98h
+
+win32kfull!LoadCPUserPreferences+0x89:
+00000001`40266f45 4c8b4308        mov     r8,qword ptr [rbx+8]
+00000001`40266f49 488d442470      lea     rax,[rsp+70h]
+00000001`40266f4e 8b5304          mov     edx,dword ptr [rbx+4]
+00000001`40266f51 4533c9          xor     r9d,r9d
+00000001`40266f54 89742430        mov     dword ptr [rsp+30h],esi
+00000001`40266f58 488bcd          mov     rcx,rbp
+00000001`40266f5b c744242804000000 mov     dword ptr [rsp+28h],4
+00000001`40266f63 4889442420      mov     qword ptr [rsp+20h],rax
+00000001`40266f68 48ff1529311700  call    qword ptr [win32kfull!_imp_FastGetProfileValue (00000001`403da098)]
+00000001`40266f6f 0f1f440000      nop     dword ptr [rax+rax]
+00000001`40266f74 85c0            test    eax,eax
+00000001`40266f76 7406            je      win32kfull!LoadCPUserPreferences+0xc2 (00000001`40266f7e)
+
+win32kfull!LoadCPUserPreferences+0xbc:
+00000001`40266f78 8b442470        mov     eax,dword ptr [rsp+70h]
+00000001`40266f7c 8903            mov     dword ptr [rbx],eax
+
+win32kfull!LoadCPUserPreferences+0xc2:
+00000001`40266f7e 4883c310        add     rbx,10h
+00000001`40266f82 4883ef01        sub     rdi,1
+00000001`40266f86 75bd            jne     win32kfull!LoadCPUserPreferences+0x89 (00000001`40266f45)
+
+win32kfull!LoadCPUserPreferences+0xcc:
+00000001`40266f88 48ff15e1001700  call    qword ptr [win32kfull!_imp_W32GetUserSessionState (00000001`403d7070)]
+00000001`40266f8f 0f1f440000      nop     dword ptr [rax+rax]
+00000001`40266f94 488b9848520000  mov     rbx,qword ptr [rax+5248h]
+00000001`40266f9b 48ff15ce001700  call    qword ptr [win32kfull!_imp_W32GetUserSessionState (00000001`403d7070)]
+00000001`40266fa2 0f1f440000      nop     dword ptr [rax+rax]
+00000001`40266fa7 8b9b5c1b0000    mov     ebx,dword ptr [rbx+1B5Ch]
+00000001`40266fad bf7c0a0100      mov     edi,10A7Ch
+00000001`40266fb2 331c38          xor     ebx,dword ptr [rax+rdi]
+00000001`40266fb5 83e304          and     ebx,4
+00000001`40266fb8 48ff15b1001700  call    qword ptr [win32kfull!_imp_W32GetUserSessionState (00000001`403d7070)]
+00000001`40266fbf 0f1f440000      nop     dword ptr [rax+rax]
+00000001`40266fc4 be5c1b0000      mov     esi,1B5Ch
+00000001`40266fc9 488b8848520000  mov     rcx,qword ptr [rax+5248h]
+00000001`40266fd0 311c31          xor     dword ptr [rcx+rsi],ebx
+00000001`40266fd3 48ff1596001700  call    qword ptr [win32kfull!_imp_W32GetUserSessionState (00000001`403d7070)]
+00000001`40266fda 0f1f440000      nop     dword ptr [rax+rax]
+00000001`40266fdf 488b9848520000  mov     rbx,qword ptr [rax+5248h]
+00000001`40266fe6 48ff1583001700  call    qword ptr [win32kfull!_imp_W32GetUserSessionState (00000001`403d7070)]
+00000001`40266fed 0f1f440000      nop     dword ptr [rax+rax]
+00000001`40266ff2 8b9b5c1b0000    mov     ebx,dword ptr [rbx+1B5Ch]
+00000001`40266ff8 331c38          xor     ebx,dword ptr [rax+rdi]
+00000001`40266ffb 4123de          and     ebx,r14d
+00000001`40266ffe 48ff156b001700  call    qword ptr [win32kfull!_imp_W32GetUserSessionState (00000001`403d7070)]
+00000001`40267005 0f1f440000      nop     dword ptr [rax+rax]
+00000001`4026700a 488b8848520000  mov     rcx,qword ptr [rax+5248h]
+00000001`40267011 311c31          xor     dword ptr [rcx+rsi],ebx
+00000001`40267014 48ff1555001700  call    qword ptr [win32kfull!_imp_W32GetUserSessionState (00000001`403d7070)]
+00000001`4026701b 0f1f440000      nop     dword ptr [rax+rax]
+00000001`40267020 488b9848520000  mov     rbx,qword ptr [rax+5248h]
+00000001`40267027 48ff1542001700  call    qword ptr [win32kfull!_imp_W32GetUserSessionState (00000001`403d7070)]
+00000001`4026702e 0f1f440000      nop     dword ptr [rax+rax]
+00000001`40267033 8b9b5c1b0000    mov     ebx,dword ptr [rbx+1B5Ch]
+00000001`40267039 331c38          xor     ebx,dword ptr [rax+rdi]
+00000001`4026703c 83e320          and     ebx,20h
+00000001`4026703f 48ff152a001700  call    qword ptr [win32kfull!_imp_W32GetUserSessionState (00000001`403d7070)]
+00000001`40267046 0f1f440000      nop     dword ptr [rax+rax]
+00000001`4026704b 488b8848520000  mov     rcx,qword ptr [rax+5248h]
+00000001`40267052 311c31          xor     dword ptr [rcx+rsi],ebx
+00000001`40267055 48ff1514001700  call    qword ptr [win32kfull!_imp_W32GetUserSessionState (00000001`403d7070)]
+00000001`4026705c 0f1f440000      nop     dword ptr [rax+rax]
+00000001`40267061 f780780a010000000200 test dword ptr [rax+10A78h],20000h
+00000001`4026706b 741c            je      win32kfull!LoadCPUserPreferences+0x1cd (00000001`40267089)
+
+win32kfull!LoadCPUserPreferences+0x1b1:
+00000001`4026706d 48ff15fcff1600  call    qword ptr [win32kfull!_imp_W32GetUserSessionState (00000001`403d7070)]
+00000001`40267074 0f1f440000      nop     dword ptr [rax+rax]
+00000001`40267079 488b8848520000  mov     rcx,qword ptr [rax+5248h]
+00000001`40267080 f0810980000000  lock or dword ptr [rcx],80h
+00000001`40267087 eb1a            jmp     win32kfull!LoadCPUserPreferences+0x1e7 (00000001`402670a3)
+
+win32kfull!LoadCPUserPreferences+0x1cd:
+00000001`40267089 48ff15e0ff1600  call    qword ptr [win32kfull!_imp_W32GetUserSessionState (00000001`403d7070)]
+00000001`40267090 0f1f440000      nop     dword ptr [rax+rax]
+00000001`40267095 488b8848520000  mov     rcx,qword ptr [rax+5248h]
+00000001`4026709c f081217fffffff  lock and dword ptr [rcx],0FFFFFF7Fh
+
+win32kfull!LoadCPUserPreferences+0x1e7:
+00000001`402670a3 b906200000      mov     ecx,2006h
+00000001`402670a8 48ff1531351700  call    qword ptr [win32kfull!_imp_UPDWORDPointer (00000001`403da5e0)]
+00000001`402670af 0f1f440000      nop     dword ptr [rax+rax]
+00000001`402670b4 8b18            mov     ebx,dword ptr [rax]
+00000001`402670b6 48ff15b3ff1600  call    qword ptr [win32kfull!_imp_W32GetUserSessionState (00000001`403d7070)]
+00000001`402670bd 0f1f440000      nop     dword ptr [rax+rax]
+00000001`402670c2 488b8848520000  mov     rcx,qword ptr [rax+5248h]
+00000001`402670c9 8999601b0000    mov     dword ptr [rcx+1B60h],ebx
+00000001`402670cf b90e200000      mov     ecx,200Eh
+00000001`402670d4 48ff1505351700  call    qword ptr [win32kfull!_imp_UPDWORDPointer (00000001`403da5e0)]
+00000001`402670db 0f1f440000      nop     dword ptr [rax+rax]
+00000001`402670e0 8b18            mov     ebx,dword ptr [rax]
+00000001`402670e2 48ff1587ff1600  call    qword ptr [win32kfull!_imp_W32GetUserSessionState (00000001`403d7070)]
+00000001`402670e9 0f1f440000      nop     dword ptr [rax+rax]
+00000001`402670ee 488b8848520000  mov     rcx,qword ptr [rax+5248h]
+00000001`402670f5 8999b4080000    mov     dword ptr [rcx+8B4h],ebx
+00000001`402670fb b910200000      mov     ecx,2010h
+00000001`40267100 48ff15d9341700  call    qword ptr [win32kfull!_imp_UPDWORDPointer (00000001`403da5e0)]
+00000001`40267107 0f1f440000      nop     dword ptr [rax+rax]
+00000001`4026710c 8b18            mov     ebx,dword ptr [rax]
+00000001`4026710e 48ff155bff1600  call    qword ptr [win32kfull!_imp_W32GetUserSessionState (00000001`403d7070)]
+00000001`40267115 0f1f440000      nop     dword ptr [rax+rax]
+00000001`4026711a 488b8848520000  mov     rcx,qword ptr [rax+5248h]
+00000001`40267121 8999b8080000    mov     dword ptr [rcx+8B8h],ebx
+00000001`40267127 48ff1542ff1600  call    qword ptr [win32kfull!_imp_W32GetUserSessionState (00000001`403d7070)]
+00000001`4026712e 0f1f440000      nop     dword ptr [rax+rax]
+00000001`40267133 488b9848520000  mov     rbx,qword ptr [rax+5248h]
+00000001`4026713a 48ff152fff1600  call    qword ptr [win32kfull!_imp_W32GetUserSessionState (00000001`403d7070)]
+00000001`40267141 0f1f440000      nop     dword ptr [rax+rax]
+00000001`40267146 8b9b5c1b0000    mov     ebx,dword ptr [rbx+1B5Ch]
+00000001`4026714c 331c38          xor     ebx,dword ptr [rax+rdi]
+00000001`4026714f 81e300000080    and     ebx,80000000h
+00000001`40267155 48ff1514ff1600  call    qword ptr [win32kfull!_imp_W32GetUserSessionState (00000001`403d7070)]
+00000001`4026715c 0f1f440000      nop     dword ptr [rax+rax]
+00000001`40267161 488b8848520000  mov     rcx,qword ptr [rax+5248h]
+00000001`40267168 311c31          xor     dword ptr [rcx+rsi],ebx
+00000001`4026716b 48ff15e6371700  call    qword ptr [win32kfull!_imp_EnforceColorDependentSettings (00000001`403da958)]
+00000001`40267172 0f1f440000      nop     dword ptr [rax+rax]
+00000001`40267177 b901200000      mov     ecx,2001h
+00000001`4026717c 48ff155d341700  call    qword ptr [win32kfull!_imp_UPDWORDPointer (00000001`403da5e0)]
+00000001`40267183 0f1f440000      nop     dword ptr [rax+rax]
+00000001`40267188 488b5c2460      mov     rbx,qword ptr [rsp+60h]
+00000001`4026718d 488b6c2468      mov     rbp,qword ptr [rsp+68h]
+00000001`40267192 c700ffffff7f    mov     dword ptr [rax],7FFFFFFFh
+00000001`40267198 b801000000      mov     eax,1
+00000001`4026719d 4883c440        add     rsp,40h
+00000001`402671a1 415e            pop     r14
+00000001`402671a3 5f              pop     rdi
+00000001`402671a4 5e              pop     rsi
+00000001`402671a5 c3              ret
+quit:
+NatVis script unloaded from 'C:\Program Files\WindowsApps\Microsoft.WinDbg_1.2606.22001.0_x64__8wekyb3d8bbwe\amd64\Visualizers\atlmfc.natvis'
+NatVis script unloaded from 'C:\Program Files\WindowsApps\Microsoft.WinDbg_1.2606.22001.0_x64__8wekyb3d8bbwe\amd64\Visualizers\concurrency.natvis'
+NatVis script unloaded from 'C:\Program Files\WindowsApps\Microsoft.WinDbg_1.2606.22001.0_x64__8wekyb3d8bbwe\amd64\Visualizers\cpp_rest.natvis'
+NatVis script unloaded from 'C:\Program Files\WindowsApps\Microsoft.WinDbg_1.2606.22001.0_x64__8wekyb3d8bbwe\amd64\Visualizers\ObjectiveC.natvis'
+NatVis script unloaded from 'C:\Program Files\WindowsApps\Microsoft.WinDbg_1.2606.22001.0_x64__8wekyb3d8bbwe\amd64\Visualizers\stl.natvis'
+NatVis script unloaded from 'C:\Program Files\WindowsApps\Microsoft.WinDbg_1.2606.22001.0_x64__8wekyb3d8bbwe\amd64\Visualizers\Windows.Data.Json.natvis'
+NatVis script unloaded from 'C:\Program Files\WindowsApps\Microsoft.WinDbg_1.2606.22001.0_x64__8wekyb3d8bbwe\amd64\Visualizers\Windows.Devices.Geolocation.natvis'
+NatVis script unloaded from 'C:\Program Files\WindowsApps\Microsoft.WinDbg_1.2606.22001.0_x64__8wekyb3d8bbwe\amd64\Visualizers\Windows.Devices.Sensors.natvis'
+NatVis script unloaded from 'C:\Program Files\WindowsApps\Microsoft.WinDbg_1.2606.22001.0_x64__8wekyb3d8bbwe\amd64\Visualizers\Windows.Media.natvis'
+NatVis script unloaded from 'C:\Program Files\WindowsApps\Microsoft.WinDbg_1.2606.22001.0_x64__8wekyb3d8bbwe\amd64\Visualizers\windows.natvis'
+NatVis script unloaded from 'C:\Program Files\WindowsApps\Microsoft.WinDbg_1.2606.22001.0_x64__8wekyb3d8bbwe\amd64\Visualizers\winrt.natvis'

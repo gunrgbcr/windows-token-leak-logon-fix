@@ -1,0 +1,144 @@
+﻿win32kfull!xxxCreateWindowEx+0x16b:
+00000001`4003e323 81e100200000    and     ecx,2000h
+win32kfull!GrepUpdateSprite+0x25:
+00000001`4005be7d b900200000      mov     ecx,2000h
+win32kfull!xxxCreateWindowEx+0x16b:
+00000001`4003e323 81e100200000    and     ecx,2000h
+win32kfull!GrepUpdateSprite+0x25:
+00000001`4005be7d b900200000      mov     ecx,2000h
+win32kfull!GrepUpdateSprite+0x25:
+00000001`4005be7d b900200000      mov     ecx,2000h
+win32kfull!DeBoostHook+0x1c:
+00000001`400aa2e0 81e100200000    and     ecx,2000h
+win32kfull!DeBoostHook+0x1c:
+00000001`400aa2e0 81e100200000    and     ecx,2000h
+win32kfull!RFONTOBJ::vXlatGlyphArray+0x2bd:
+00000001`400dcf3d b900200000      mov     ecx,2000h
+win32kfull!DeBoostHook+0x1c:
+00000001`400aa2e0 81e100200000    and     ecx,2000h
+win32kfull!RFONTOBJ::vXlatGlyphArray+0x2bd:
+00000001`400dcf3d b900200000      mov     ecx,2000h
+win32kfull!DeBoostHook+0x1c:
+00000001`400aa2e0 81e100200000    and     ecx,2000h
+win32kfull!RFONTOBJ::vXlatGlyphArray+0x2bd:
+00000001`400dcf3d b900200000      mov     ecx,2000h
+win32kfull!xxxDrawMenuItem+0x21e:
+00000001`4010731a 81e100200000    and     ecx,2000h
+win32kfull!RFONTOBJ::vXlatGlyphArray+0x2bd:
+00000001`400dcf3d b900200000      mov     ecx,2000h
+win32kfull!xxxDrawMenuItem+0x21e:
+00000001`4010731a 81e100200000    and     ecx,2000h
+win32kfull!bComputeQuickLookup+0x2b1:
+00000001`4011cbfd b900200000      mov     ecx,2000h
+win32kfull!xxxDrawMenuItem+0x21e:
+00000001`4010731a 81e100200000    and     ecx,2000h
+win32kfull!bComputeQuickLookup+0x2b1:
+00000001`4011cbfd b900200000      mov     ecx,2000h
+win32kfull!xxxDrawMenuItem+0x21e:
+00000001`4010731a 81e100200000    and     ecx,2000h
+win32kfull!bComputeQuickLookup+0x2b1:
+00000001`4011cbfd b900200000      mov     ecx,2000h
+win32kfull!NtGdiFlushUserBatch+0x4:
+00000001`40188b24 b900200000      mov     ecx,2000h
+win32kfull!NtGdiFlushUserBatch+0x4:
+00000001`40188b24 b900200000      mov     ecx,2000h
+win32kfull!CanForceForeground+0x431:
+00000001`4019ee8d b900200000      mov     ecx,2000h
+win32kfull!CForegroundLaunch::_CheckAllowForeground+0x7f1:
+00000001`401a0a75 b900200000      mov     ecx,2000h
+win32kfull!xxxSystemParametersInfoWorker+0x44f1:
+00000001`401ad919 81e901200000    sub     ecx,2001h
+win32kfull!NtGdiFlushUserBatch+0x4:
+00000001`40188b24 b900200000      mov     ecx,2000h
+win32kfull!CanForceForeground+0x431:
+00000001`4019ee8d b900200000      mov     ecx,2000h
+win32kfull!CForegroundLaunch::_CheckAllowForeground+0x7f1:
+00000001`401a0a75 b900200000      mov     ecx,2000h
+win32kfull!xxxSystemParametersInfoWorker+0x44f1:
+00000001`401ad919 81e901200000    sub     ecx,2001h
+win32kfull!NtGdiFlushUserBatch+0x4:
+00000001`40188b24 b900200000      mov     ecx,2000h
+win32kfull!CanForceForeground+0x431:
+00000001`4019ee8d b900200000      mov     ecx,2000h
+win32kfull!CForegroundLaunch::_CheckAllowForeground+0x7f1:
+00000001`401a0a75 b900200000      mov     ecx,2000h
+win32kfull!xxxSystemParametersInfoWorker+0x44f1:
+00000001`401ad919 81e901200000    sub     ecx,2001h
+win32kfull!xxxSystemParametersInfoWorker+0x44f1:
+00000001`401ad919 81e901200000    sub     ecx,2001h
+win32kfull!PROXYPORT::PROXYPORT+0x23d:
+00000001`40203b49 b900200000      mov     ecx,2000h
+win32kfull!PROXYPORT::PROXYPORT+0x23d:
+00000001`40203b49 b900200000      mov     ecx,2000h
+win32kfull!PROXYPORT::PROXYPORT+0x23d:
+00000001`40203b49 b900200000      mov     ecx,2000h
+win32kfull!PROXYPORT::PROXYPORT+0x23d:
+00000001`40203b49 b900200000      mov     ecx,2000h
+win32kfull!RawInputThread+0x4e2:
+00000001`40257dd2 b900200000      mov     ecx,2000h
+win32kfull!LoadCPUserPreferences+0x2bb:
+00000001`4025e383 b901200000      mov     ecx,2001h
+win32kfull!RawInputThread+0x4e2:
+00000001`40257dd2 b900200000      mov     ecx,2000h
+win32kfull!LoadCPUserPreferences+0x2bb:
+00000001`4025e383 b901200000      mov     ecx,2001h
+win32kfull!RawInputThread+0x4e2:
+00000001`40257dd2 b900200000      mov     ecx,2000h
+win32kfull!LoadCPUserPreferences+0x2bb:
+00000001`4025e383 b901200000      mov     ecx,2001h
+win32kbase!CitLastInputUpdate+0xbe:
+00000001`400951be b900200000      mov     ecx,2000h
+win32kbase!CitpLastInputUpdate+0x4ab:
+00000001`400956a7 81f900200000    cmp     ecx,2000h
+win32kbase!CitpLastInputUpdate+0x869:
+00000001`40095a65 81f900200000    cmp     ecx,2000h
+win32kbase!CitLastInputUpdate+0xbe:
+00000001`400951be b900200000      mov     ecx,2000h
+win32kbase!CitpLastInputUpdate+0x4ab:
+00000001`400956a7 81f900200000    cmp     ecx,2000h
+win32kbase!CitpLastInputUpdate+0x869:
+00000001`40095a65 81f900200000    cmp     ecx,2000h
+win32kbase!CitLastInputUpdate+0xbe:
+00000001`400951be b900200000      mov     ecx,2000h
+win32kbase!CitpLastInputUpdate+0x4ab:
+00000001`400956a7 81f900200000    cmp     ecx,2000h
+win32kbase!CitpLastInputUpdate+0x869:
+00000001`40095a65 81f900200000    cmp     ecx,2000h
+win32kbase!CitLastInputUpdate+0xbe:
+00000001`400951be b900200000      mov     ecx,2000h
+win32kbase!CitpLastInputUpdate+0x4ab:
+00000001`400956a7 81f900200000    cmp     ecx,2000h
+win32kbase!CitpLastInputUpdate+0x869:
+00000001`40095a65 81f900200000    cmp     ecx,2000h
+win32kbase!ProcessKeyboardInjectedInput+0x89:
+00000001`401175d9 b900200000      mov     ecx,2000h
+win32kbase!ProcessKeyboardInjectedInput+0x89:
+00000001`401175d9 b900200000      mov     ecx,2000h
+win32kbase!DrvSetDisplayConfig+0xafb:
+00000001`4011b07b 81e100200000    and     ecx,2000h
+win32kbase!ProcessKeyboardInjectedInput+0x89:
+00000001`401175d9 b900200000      mov     ecx,2000h
+win32kbase!DrvSetDisplayConfig+0xafb:
+00000001`4011b07b 81e100200000    and     ecx,2000h
+win32kbase!ProcessKeyboardInjectedInput+0x89:
+00000001`401175d9 b900200000      mov     ecx,2000h
+win32kbase!DrvSetDisplayConfig+0xafb:
+00000001`4011b07b 81e100200000    and     ecx,2000h
+win32kbase!tagQ::RecalcUIPI+0x44:
+00000001`401bf0f4 b900200000      mov     ecx,2000h
+win32kbase!tagQ::RecalcUIPI+0x44:
+00000001`401bf0f4 b900200000      mov     ecx,2000h
+win32kbase!CheckSystemParametersAccess+0x634:
+00000001`401df2f4 b900200000      mov     ecx,2000h
+win32kbase!tagQ::RecalcUIPI+0x44:
+00000001`401bf0f4 b900200000      mov     ecx,2000h
+win32kbase!CheckSystemParametersAccess+0x634:
+00000001`401df2f4 b900200000      mov     ecx,2000h
+win32kbase!RIMLogDeviceHealthTelemetry+0x155:
+00000001`401f62cd 81e100200000    and     ecx,2000h
+win32kbase!CheckSystemParametersAccess+0x634:
+00000001`401df2f4 b900200000      mov     ecx,2000h
+win32kbase!RIMLogDeviceHealthTelemetry+0x155:
+00000001`401f62cd 81e100200000    and     ecx,2000h
+win32kbase!RIMLogDeviceHealthTelemetry+0x155:
+00000001`401f62cd 81e100200000    and     ecx,2000h

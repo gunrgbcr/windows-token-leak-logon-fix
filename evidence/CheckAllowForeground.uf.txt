@@ -1,0 +1,990 @@
+﻿0:000> uf win32kfull!CForegroundLaunch::_CheckAllowForeground; q
+win32kfull!CForegroundLaunch::_CheckAllowForeground:
+00000001`401a0284 4889542410      mov     qword ptr [rsp+10h],rdx
+00000001`401a0289 48894c2408      mov     qword ptr [rsp+8],rcx
+00000001`401a028e 55              push    rbp
+00000001`401a028f 53              push    rbx
+00000001`401a0290 56              push    rsi
+00000001`401a0291 57              push    rdi
+00000001`401a0292 4154            push    r12
+00000001`401a0294 4155            push    r13
+00000001`401a0296 4156            push    r14
+00000001`401a0298 4157            push    r15
+00000001`401a029a 488d6c24e1      lea     rbp,[rsp-1Fh]
+00000001`401a029f 4881ecb8000000  sub     rsp,0B8h
+00000001`401a02a6 4533f6          xor     r14d,r14d
+00000001`401a02a9 488bda          mov     rbx,rdx
+00000001`401a02ac 41bf02000000    mov     r15d,2
+00000001`401a02b2 4438b1b8010000  cmp     byte ptr [rcx+1B8h],r14b
+00000001`401a02b9 741c            je      win32kfull!CForegroundLaunch::_CheckAllowForeground+0x53 (00000001`401a02d7)
+
+win32kfull!CForegroundLaunch::_CheckAllowForeground+0x37:
+00000001`401a02bb c7457700000200  mov     dword ptr [rbp+77h],20000h
+00000001`401a02c2 488d0defa31c00  lea     rcx,[win32kfull!`string' (00000001`4036a6b8)]
+00000001`401a02c9 8b5577          mov     edx,dword ptr [rbp+77h]
+00000001`401a02cc 41b8db040000    mov     r8d,4DBh
+00000001`401a02d2 e8f1090e00      call    win32kfull!MicrosoftTelemetryAssertTriggeredArgsKM (00000001`40280cc8)
+
+win32kfull!CForegroundLaunch::_CheckAllowForeground+0x53:
+00000001`401a02d7 488b0b          mov     rcx,qword ptr [rbx]
+00000001`401a02da bf01000000      mov     edi,1
+00000001`401a02df 448aef          mov     r13b,dil
+00000001`401a02e2 44897577        mov     dword ptr [rbp+77h],r14d
+00000001`401a02e6 458be6          mov     r12d,r14d
+00000001`401a02e9 418af6          mov     sil,r14b
+00000001`401a02ec 48ff159d642300  call    qword ptr [win32kfull!_imp_PsGetProcessInheritedFromUniqueProcessId (00000001`403d6790)]
+00000001`401a02f3 0f1f440000      nop     dword ptr [rax+rax]
+00000001`401a02f8 488bd8          mov     rbx,rax
+00000001`401a02fb 4889457f        mov     qword ptr [rbp+7Fh],rax
+00000001`401a02ff 488b1502582100  mov     rdx,qword ptr [win32kfull!WPP_GLOBAL_Control (00000001`403b5b08)]
+00000001`401a0306 488d05fb572100  lea     rax,[win32kfull!WPP_GLOBAL_Control (00000001`403b5b08)]
+00000001`401a030d 483bd0          cmp     rdx,rax
+00000001`401a0310 7411            je      win32kfull!CForegroundLaunch::_CheckAllowForeground+0x9f (00000001`401a0323)
+
+win32kfull!CForegroundLaunch::_CheckAllowForeground+0x8e:
+00000001`401a0312 8b4a2c          mov     ecx,dword ptr [rdx+2Ch]
+00000001`401a0315 4184cf          test    r15b,cl
+00000001`401a0318 7409            je      win32kfull!CForegroundLaunch::_CheckAllowForeground+0x9f (00000001`401a0323)
+
+win32kfull!CForegroundLaunch::_CheckAllowForeground+0x96:
+00000001`401a031a 807a2904        cmp     byte ptr [rdx+29h],4
+00000001`401a031e 7203            jb      win32kfull!CForegroundLaunch::_CheckAllowForeground+0x9f (00000001`401a0323)
+
+win32kfull!CForegroundLaunch::_CheckAllowForeground+0x9c:
+00000001`401a0320 448af7          mov     r14b,dil
+
+win32kfull!CForegroundLaunch::_CheckAllowForeground+0x9f:
+00000001`401a0323 488d05e6572100  lea     rax,[win32kfull!WPP_RECORDER_INITIALIZED (00000001`403b5b10)]
+00000001`401a032a 483905df572100  cmp     qword ptr [win32kfull!WPP_RECORDER_INITIALIZED (00000001`403b5b10)],rax
+00000001`401a0331 410f95c7        setne   r15b
+00000001`401a0335 4584f6          test    r14b,r14b
+00000001`401a0338 7505            jne     win32kfull!CForegroundLaunch::_CheckAllowForeground+0xbb (00000001`401a033f)
+
+win32kfull!CForegroundLaunch::_CheckAllowForeground+0xb6:
+00000001`401a033a 4584ff          test    r15b,r15b
+00000001`401a033d 7458            je      win32kfull!CForegroundLaunch::_CheckAllowForeground+0x113 (00000001`401a0397)
+
+win32kfull!CForegroundLaunch::_CheckAllowForeground+0xbb:
+00000001`401a033f 488b5d6f        mov     rbx,qword ptr [rbp+6Fh]
+00000001`401a0343 8b5b38          mov     ebx,dword ptr [rbx+38h]
+00000001`401a0346 48ff15235d2300  call    qword ptr [win32kfull!_imp_W32GetUserSessionState (00000001`403d6070)]
+00000001`401a034d 0f1f440000      nop     dword ptr [rax+rax]
+00000001`401a0352 895c2440        mov     dword ptr [rsp+40h],ebx
+00000001`401a0356 488d0d13f51c00  lea     rcx,[win32kfull!WPP_be53be3051cc3afe89ac48a33e4f3eff_Traceguids (00000001`4036f870)]
+00000001`401a035d 48894c2438      mov     qword ptr [rsp+38h],rcx
+00000001`401a0362 458ac7          mov     r8b,r15b
+00000001`401a0365 488b0d9c572100  mov     rcx,qword ptr [win32kfull!WPP_GLOBAL_Control (00000001`403b5b08)]
+00000001`401a036c 418ad6          mov     dl,r14b
+00000001`401a036f 4c8b88c8130100  mov     r9,qword ptr [rax+113C8h]
+00000001`401a0376 66c74424303900  mov     word ptr [rsp+30h],39h
+00000001`401a037d c744242802000000 mov     dword ptr [rsp+28h],2
+00000001`401a0385 488b4918        mov     rcx,qword ptr [rcx+18h]
+00000001`401a0389 c644242004      mov     byte ptr [rsp+20h],4
+00000001`401a038e e81df2ffff      call    win32kfull!WPP_RECORDER_AND_TRACE_SF_D (00000001`4019f5b0)
+00000001`401a0393 488b5d7f        mov     rbx,qword ptr [rbp+7Fh]
+
+win32kfull!CForegroundLaunch::_CheckAllowForeground+0x113:
+00000001`401a0397 4533ff          xor     r15d,r15d
+
+win32kfull!CForegroundLaunch::_CheckAllowForeground+0x116:
+00000001`401a039a 4533c0          xor     r8d,r8d
+00000001`401a039d 44897c2420      mov     dword ptr [rsp+20h],r15d
+00000001`401a03a2 488bd3          mov     rdx,rbx
+00000001`401a03a5 488d4dc7        lea     rcx,[rbp-39h]
+00000001`401a03a9 e812040d00      call    win32kfull!CLockProcessByPid::CLockProcessByPid (00000001`402707c0)
+00000001`401a03ae 44397dcf        cmp     dword ptr [rbp-31h],r15d
+00000001`401a03b2 0f8cae080000    jl      win32kfull!CForegroundLaunch::_CheckAllowForeground+0x9e2 (00000001`401a0c66)
+
+win32kfull!CForegroundLaunch::_CheckAllowForeground+0x134:
+00000001`401a03b8 8b5def          mov     ebx,dword ptr [rbp-11h]
+00000001`401a03bb e8f0adf7ff      call    win32kfull!W32GetCurrentWin32kSessionId (00000001`4011b1b0)
+00000001`401a03c0 3bc3            cmp     eax,ebx
+00000001`401a03c2 0f8514060000    jne     win32kfull!CForegroundLaunch::_CheckAllowForeground+0x758 (00000001`401a09dc)
+
+win32kfull!CForegroundLaunch::_CheckAllowForeground+0x144:
+00000001`401a03c8 488b4ddf        mov     rcx,qword ptr [rbp-21h]
+00000001`401a03cc 48ff15c55d2300  call    qword ptr [win32kfull!_imp_PsGetProcessWin32Process (00000001`403d6198)]
+00000001`401a03d3 0f1f440000      nop     dword ptr [rax+rax]
+00000001`401a03d8 4c8bf0          mov     r14,rax
+00000001`401a03db 4885c0          test    rax,rax
+00000001`401a03de 0f848f050000    je      win32kfull!CForegroundLaunch::_CheckAllowForeground+0x6ef (00000001`401a0973)
+
+win32kfull!CForegroundLaunch::_CheckAllowForeground+0x160:
+00000001`401a03e4 4c3938          cmp     qword ptr [rax],r15
+00000001`401a03e7 0f8486050000    je      win32kfull!CForegroundLaunch::_CheckAllowForeground+0x6ef (00000001`401a0973)
+
+win32kfull!CForegroundLaunch::_CheckAllowForeground+0x169:
+00000001`401a03ed 4584ed          test    r13b,r13b
+00000001`401a03f0 7527            jne     win32kfull!CForegroundLaunch::_CheckAllowForeground+0x195 (00000001`401a0419)
+
+win32kfull!CForegroundLaunch::_CheckAllowForeground+0x16e:
+00000001`401a03f2 488bc8          mov     rcx,rax
+00000001`401a03f5 e8a287f6ff      call    win32kfull!IsShellProcess (00000001`40108b9c)
+00000001`401a03fa 85c0            test    eax,eax
+00000001`401a03fc 0f85cd040000    jne     win32kfull!CForegroundLaunch::_CheckAllowForeground+0x64b (00000001`401a08cf)
+
+win32kfull!CForegroundLaunch::_CheckAllowForeground+0x17e:
+00000001`401a0402 488b8198020000  mov     rax,qword ptr [rcx+298h]
+00000001`401a0409 4885c0          test    rax,rax
+00000001`401a040c 740b            je      win32kfull!CForegroundLaunch::_CheckAllowForeground+0x195 (00000001`401a0419)
+
+win32kfull!CForegroundLaunch::_CheckAllowForeground+0x18a:
+00000001`401a040e 8b4040          mov     eax,dword ptr [rax+40h]
+00000001`401a0411 a804            test    al,4
+00000001`401a0413 0f85b6040000    jne     win32kfull!CForegroundLaunch::_CheckAllowForeground+0x64b (00000001`401a08cf)
+
+win32kfull!CForegroundLaunch::_CheckAllowForeground+0x195:
+00000001`401a0419 498bce          mov     rcx,r14
+00000001`401a041c e83be6ffff      call    win32kfull!CanForceForeground (00000001`4019ea5c)
+00000001`401a0421 408af0          mov     sil,al
+00000001`401a0424 84c0            test    al,al
+00000001`401a0426 0f85f8020000    jne     win32kfull!CForegroundLaunch::_CheckAllowForeground+0x4a0 (00000001`401a0724)
+
+win32kfull!CForegroundLaunch::_CheckAllowForeground+0x1a8:
+00000001`401a042c 498b8e50010000  mov     rcx,qword ptr [r14+150h]
+00000001`401a0433 4885c9          test    rcx,rcx
+00000001`401a0436 0f84b2000000    je      win32kfull!CForegroundLaunch::_CheckAllowForeground+0x26a (00000001`401a04ee)
+
+win32kfull!CForegroundLaunch::_CheckAllowForeground+0x1b8:
+00000001`401a043c 48ff150d932300  call    qword ptr [win32kfull!_imp_?ComputeAndTestForegroundActivatetagTHREADINFOQEAA_NXZ (00000001`403d9750)]
+00000001`401a0443 0f1f440000      nop     dword ptr [rax+rax]
+00000001`401a0448 84c0            test    al,al
+00000001`401a044a 0f849e000000    je      win32kfull!CForegroundLaunch::_CheckAllowForeground+0x26a (00000001`401a04ee)
+
+win32kfull!CForegroundLaunch::_CheckAllowForeground+0x1cc:
+00000001`401a0450 488b0db1562100  mov     rcx,qword ptr [win32kfull!WPP_GLOBAL_Control (00000001`403b5b08)]
+00000001`401a0457 488d05aa562100  lea     rax,[win32kfull!WPP_GLOBAL_Control (00000001`403b5b08)]
+00000001`401a045e 483bc8          cmp     rcx,rax
+00000001`401a0461 7410            je      win32kfull!CForegroundLaunch::_CheckAllowForeground+0x1ef (00000001`401a0473)
+
+win32kfull!CForegroundLaunch::_CheckAllowForeground+0x1df:
+00000001`401a0463 8b412c          mov     eax,dword ptr [rcx+2Ch]
+00000001`401a0466 a802            test    al,2
+00000001`401a0468 7409            je      win32kfull!CForegroundLaunch::_CheckAllowForeground+0x1ef (00000001`401a0473)
+
+win32kfull!CForegroundLaunch::_CheckAllowForeground+0x1e6:
+00000001`401a046a 80792904        cmp     byte ptr [rcx+29h],4
+00000001`401a046e 408af7          mov     sil,dil
+00000001`401a0471 7303            jae     win32kfull!CForegroundLaunch::_CheckAllowForeground+0x1f2 (00000001`401a0476)
+
+win32kfull!CForegroundLaunch::_CheckAllowForeground+0x1ef:
+00000001`401a0473 418af7          mov     sil,r15b
+
+win32kfull!CForegroundLaunch::_CheckAllowForeground+0x1f2:
+00000001`401a0476 488d0593562100  lea     rax,[win32kfull!WPP_RECORDER_INITIALIZED (00000001`403b5b10)]
+00000001`401a047d 4839058c562100  cmp     qword ptr [win32kfull!WPP_RECORDER_INITIALIZED (00000001`403b5b10)],rax
+00000001`401a0484 410f95c7        setne   r15b
+00000001`401a0488 4084f6          test    sil,sil
+00000001`401a048b 7505            jne     win32kfull!CForegroundLaunch::_CheckAllowForeground+0x20e (00000001`401a0492)
+
+win32kfull!CForegroundLaunch::_CheckAllowForeground+0x209:
+00000001`401a048d 4584ff          test    r15b,r15b
+00000001`401a0490 7451            je      win32kfull!CForegroundLaunch::_CheckAllowForeground+0x25f (00000001`401a04e3)
+
+win32kfull!CForegroundLaunch::_CheckAllowForeground+0x20e:
+00000001`401a0492 418b5e38        mov     ebx,dword ptr [r14+38h]
+00000001`401a0496 48ff15d35b2300  call    qword ptr [win32kfull!_imp_W32GetUserSessionState (00000001`403d6070)]
+00000001`401a049d 0f1f440000      nop     dword ptr [rax+rax]
+00000001`401a04a2 895c2440        mov     dword ptr [rsp+40h],ebx
+00000001`401a04a6 488d0dc3f31c00  lea     rcx,[win32kfull!WPP_be53be3051cc3afe89ac48a33e4f3eff_Traceguids (00000001`4036f870)]
+00000001`401a04ad 48894c2438      mov     qword ptr [rsp+38h],rcx
+00000001`401a04b2 458ac7          mov     r8b,r15b
+00000001`401a04b5 488b0d4c562100  mov     rcx,qword ptr [win32kfull!WPP_GLOBAL_Control (00000001`403b5b08)]
+00000001`401a04bc 408ad6          mov     dl,sil
+00000001`401a04bf 4c8b88c8130100  mov     r9,qword ptr [rax+113C8h]
+00000001`401a04c6 66c74424304100  mov     word ptr [rsp+30h],41h
+00000001`401a04cd c744242802000000 mov     dword ptr [rsp+28h],2
+00000001`401a04d5 488b4918        mov     rcx,qword ptr [rcx+18h]
+00000001`401a04d9 c644242004      mov     byte ptr [rsp+20h],4
+00000001`401a04de e8cdf0ffff      call    win32kfull!WPP_RECORDER_AND_TRACE_SF_D (00000001`4019f5b0)
+
+win32kfull!CForegroundLaunch::_CheckAllowForeground+0x25f:
+00000001`401a04e3 408af7          mov     sil,dil
+
+win32kfull!CForegroundLaunch::_CheckAllowForeground+0x262:
+00000001`401a04e6 4533ff          xor     r15d,r15d
+00000001`401a04e9 e936020000      jmp     win32kfull!CForegroundLaunch::_CheckAllowForeground+0x4a0 (00000001`401a0724)
+
+win32kfull!CForegroundLaunch::_CheckAllowForeground+0x26a:
+00000001`401a04ee 488b0d13562100  mov     rcx,qword ptr [win32kfull!WPP_GLOBAL_Control (00000001`403b5b08)]
+00000001`401a04f5 488d050c562100  lea     rax,[win32kfull!WPP_GLOBAL_Control (00000001`403b5b08)]
+00000001`401a04fc 483bc8          cmp     rcx,rax
+00000001`401a04ff 7410            je      win32kfull!CForegroundLaunch::_CheckAllowForeground+0x28d (00000001`401a0511)
+
+win32kfull!CForegroundLaunch::_CheckAllowForeground+0x27d:
+00000001`401a0501 8b412c          mov     eax,dword ptr [rcx+2Ch]
+00000001`401a0504 a802            test    al,2
+00000001`401a0506 7409            je      win32kfull!CForegroundLaunch::_CheckAllowForeground+0x28d (00000001`401a0511)
+
+win32kfull!CForegroundLaunch::_CheckAllowForeground+0x284:
+00000001`401a0508 80792904        cmp     byte ptr [rcx+29h],4
+00000001`401a050c 408adf          mov     bl,dil
+00000001`401a050f 7303            jae     win32kfull!CForegroundLaunch::_CheckAllowForeground+0x290 (00000001`401a0514)
+
+win32kfull!CForegroundLaunch::_CheckAllowForeground+0x28d:
+00000001`401a0511 418adf          mov     bl,r15b
+
+win32kfull!CForegroundLaunch::_CheckAllowForeground+0x290:
+00000001`401a0514 488d05f5552100  lea     rax,[win32kfull!WPP_RECORDER_INITIALIZED (00000001`403b5b10)]
+00000001`401a051b 483905ee552100  cmp     qword ptr [win32kfull!WPP_RECORDER_INITIALIZED (00000001`403b5b10)],rax
+00000001`401a0522 410f95c7        setne   r15b
+00000001`401a0526 84db            test    bl,bl
+00000001`401a0528 7505            jne     win32kfull!CForegroundLaunch::_CheckAllowForeground+0x2ab (00000001`401a052f)
+
+win32kfull!CForegroundLaunch::_CheckAllowForeground+0x2a6:
+00000001`401a052a 4584ff          test    r15b,r15b
+00000001`401a052d 7448            je      win32kfull!CForegroundLaunch::_CheckAllowForeground+0x2f3 (00000001`401a0577)
+
+win32kfull!CForegroundLaunch::_CheckAllowForeground+0x2ab:
+00000001`401a052f 48ff153a5b2300  call    qword ptr [win32kfull!_imp_W32GetUserSessionState (00000001`403d6070)]
+00000001`401a0536 0f1f440000      nop     dword ptr [rax+rax]
+00000001`401a053b 488d0d2ef31c00  lea     rcx,[win32kfull!WPP_be53be3051cc3afe89ac48a33e4f3eff_Traceguids (00000001`4036f870)]
+00000001`401a0542 458ac7          mov     r8b,r15b
+00000001`401a0545 48894c2438      mov     qword ptr [rsp+38h],rcx
+00000001`401a054a 8ad3            mov     dl,bl
+00000001`401a054c 488b0db5552100  mov     rcx,qword ptr [win32kfull!WPP_GLOBAL_Control (00000001`403b5b08)]
+00000001`401a0553 4c8b88c8130100  mov     r9,qword ptr [rax+113C8h]
+00000001`401a055a 66c74424304200  mov     word ptr [rsp+30h],42h
+00000001`401a0561 c744242802000000 mov     dword ptr [rsp+28h],2
+00000001`401a0569 488b4918        mov     rcx,qword ptr [rcx+18h]
+00000001`401a056d c644242004      mov     byte ptr [rsp+20h],4
+00000001`401a0572 e871b4f0ff      call    win32kfull!WPP_RECORDER_AND_TRACE_SF_ (00000001`400ab9e8)
+
+win32kfull!CForegroundLaunch::_CheckAllowForeground+0x2f3:
+00000001`401a0577 488b4ddf        mov     rcx,qword ptr [rbp-21h]
+00000001`401a057b 48ff150e622300  call    qword ptr [win32kfull!_imp_PsGetProcessInheritedFromUniqueProcessId (00000001`403d6790)]
+00000001`401a0582 0f1f440000      nop     dword ptr [rax+rax]
+00000001`401a0587 4533ff          xor     r15d,r15d
+00000001`401a058a 4889457f        mov     qword ptr [rbp+7Fh],rax
+00000001`401a058e 488bd8          mov     rbx,rax
+00000001`401a0591 4584ed          test    r13b,r13b
+00000001`401a0594 0f848e010000    je      win32kfull!CForegroundLaunch::_CheckAllowForeground+0x4a4 (00000001`401a0728)
+
+win32kfull!CForegroundLaunch::_CheckAllowForeground+0x316:
+00000001`401a059a 488b0d67552100  mov     rcx,qword ptr [win32kfull!WPP_GLOBAL_Control (00000001`403b5b08)]
+00000001`401a05a1 488d0560552100  lea     rax,[win32kfull!WPP_GLOBAL_Control (00000001`403b5b08)]
+00000001`401a05a8 483bc8          cmp     rcx,rax
+00000001`401a05ab 7410            je      win32kfull!CForegroundLaunch::_CheckAllowForeground+0x339 (00000001`401a05bd)
+
+win32kfull!CForegroundLaunch::_CheckAllowForeground+0x329:
+00000001`401a05ad 8b412c          mov     eax,dword ptr [rcx+2Ch]
+00000001`401a05b0 a802            test    al,2
+00000001`401a05b2 7409            je      win32kfull!CForegroundLaunch::_CheckAllowForeground+0x339 (00000001`401a05bd)
+
+win32kfull!CForegroundLaunch::_CheckAllowForeground+0x330:
+00000001`401a05b4 80792904        cmp     byte ptr [rcx+29h],4
+00000001`401a05b8 408adf          mov     bl,dil
+00000001`401a05bb 7303            jae     win32kfull!CForegroundLaunch::_CheckAllowForeground+0x33c (00000001`401a05c0)
+
+win32kfull!CForegroundLaunch::_CheckAllowForeground+0x339:
+00000001`401a05bd 418adf          mov     bl,r15b
+
+win32kfull!CForegroundLaunch::_CheckAllowForeground+0x33c:
+00000001`401a05c0 488d0549552100  lea     rax,[win32kfull!WPP_RECORDER_INITIALIZED (00000001`403b5b10)]
+00000001`401a05c7 48390542552100  cmp     qword ptr [win32kfull!WPP_RECORDER_INITIALIZED (00000001`403b5b10)],rax
+00000001`401a05ce 410f95c7        setne   r15b
+00000001`401a05d2 84db            test    bl,bl
+00000001`401a05d4 7505            jne     win32kfull!CForegroundLaunch::_CheckAllowForeground+0x357 (00000001`401a05db)
+
+win32kfull!CForegroundLaunch::_CheckAllowForeground+0x352:
+00000001`401a05d6 4584ff          test    r15b,r15b
+00000001`401a05d9 7448            je      win32kfull!CForegroundLaunch::_CheckAllowForeground+0x39f (00000001`401a0623)
+
+win32kfull!CForegroundLaunch::_CheckAllowForeground+0x357:
+00000001`401a05db 48ff158e5a2300  call    qword ptr [win32kfull!_imp_W32GetUserSessionState (00000001`403d6070)]
+00000001`401a05e2 0f1f440000      nop     dword ptr [rax+rax]
+00000001`401a05e7 488d0d82f21c00  lea     rcx,[win32kfull!WPP_be53be3051cc3afe89ac48a33e4f3eff_Traceguids (00000001`4036f870)]
+00000001`401a05ee 458ac7          mov     r8b,r15b
+00000001`401a05f1 48894c2438      mov     qword ptr [rsp+38h],rcx
+00000001`401a05f6 8ad3            mov     dl,bl
+00000001`401a05f8 488b0d09552100  mov     rcx,qword ptr [win32kfull!WPP_GLOBAL_Control (00000001`403b5b08)]
+00000001`401a05ff 4c8b88c8130100  mov     r9,qword ptr [rax+113C8h]
+00000001`401a0606 66c74424304300  mov     word ptr [rsp+30h],43h
+00000001`401a060d c744242802000000 mov     dword ptr [rsp+28h],2
+00000001`401a0615 488b4918        mov     rcx,qword ptr [rcx+18h]
+00000001`401a0619 c644242004      mov     byte ptr [rsp+20h],4
+00000001`401a061e e8c5b3f0ff      call    win32kfull!WPP_RECORDER_AND_TRACE_SF_ (00000001`400ab9e8)
+
+win32kfull!CForegroundLaunch::_CheckAllowForeground+0x39f:
+00000001`401a0623 488b4ddf        mov     rcx,qword ptr [rbp-21h]
+00000001`401a0627 4533ff          xor     r15d,r15d
+00000001`401a062a 458aef          mov     r13b,r15b
+00000001`401a062d 48ff1554622300  call    qword ptr [win32kfull!_imp_PsReferencePrimaryToken (00000001`403d6888)]
+00000001`401a0634 0f1f440000      nop     dword ptr [rax+rax]
+00000001`401a0639 4885c0          test    rax,rax
+00000001`401a063c 0f84e2000000    je      win32kfull!CForegroundLaunch::_CheckAllowForeground+0x4a0 (00000001`401a0724)
+
+win32kfull!CForegroundLaunch::_CheckAllowForeground+0x3be:
+00000001`401a0642 488d55b7        lea     rdx,[rbp-49h]
+00000001`401a0646 4c897db7        mov     qword ptr [rbp-49h],r15
+00000001`401a064a 488bc8          mov     rcx,rax
+00000001`401a064d 48ff1534612300  call    qword ptr [win32kfull!_imp_SeQueryAuthenticationIdToken (00000001`403d6788)]
+00000001`401a0654 0f1f440000      nop     dword ptr [rax+rax]
+00000001`401a0659 85c0            test    eax,eax
+00000001`401a065b 0f88c3000000    js      win32kfull!CForegroundLaunch::_CheckAllowForeground+0x4a0 (00000001`401a0724)
+
+win32kfull!CForegroundLaunch::_CheckAllowForeground+0x3dd:
+00000001`401a0661 488b05d08e2300  mov     rax,qword ptr [win32kfull!_imp_luidSystem (00000001`403d9538)]
+00000001`401a0668 8b08            mov     ecx,dword ptr [rax]
+00000001`401a066a 394db7          cmp     dword ptr [rbp-49h],ecx
+00000001`401a066d 0f85ae000000    jne     win32kfull!CForegroundLaunch::_CheckAllowForeground+0x49d (00000001`401a0721)
+
+win32kfull!CForegroundLaunch::_CheckAllowForeground+0x3ef:
+00000001`401a0673 8b4804          mov     ecx,dword ptr [rax+4]
+00000001`401a0676 394dbb          cmp     dword ptr [rbp-45h],ecx
+00000001`401a0679 0f85a2000000    jne     win32kfull!CForegroundLaunch::_CheckAllowForeground+0x49d (00000001`401a0721)
+
+win32kfull!CForegroundLaunch::_CheckAllowForeground+0x3fb:
+00000001`401a067f 408af7          mov     sil,dil
+00000001`401a0682 488b0d7f542100  mov     rcx,qword ptr [win32kfull!WPP_GLOBAL_Control (00000001`403b5b08)]
+00000001`401a0689 488d0578542100  lea     rax,[win32kfull!WPP_GLOBAL_Control (00000001`403b5b08)]
+00000001`401a0690 483bc8          cmp     rcx,rax
+00000001`401a0693 7410            je      win32kfull!CForegroundLaunch::_CheckAllowForeground+0x421 (00000001`401a06a5)
+
+win32kfull!CForegroundLaunch::_CheckAllowForeground+0x411:
+00000001`401a0695 8b412c          mov     eax,dword ptr [rcx+2Ch]
+00000001`401a0698 a802            test    al,2
+00000001`401a069a 7409            je      win32kfull!CForegroundLaunch::_CheckAllowForeground+0x421 (00000001`401a06a5)
+
+win32kfull!CForegroundLaunch::_CheckAllowForeground+0x418:
+00000001`401a069c 80792904        cmp     byte ptr [rcx+29h],4
+00000001`401a06a0 7203            jb      win32kfull!CForegroundLaunch::_CheckAllowForeground+0x421 (00000001`401a06a5)
+
+win32kfull!CForegroundLaunch::_CheckAllowForeground+0x41e:
+00000001`401a06a2 448aff          mov     r15b,dil
+
+win32kfull!CForegroundLaunch::_CheckAllowForeground+0x421:
+00000001`401a06a5 488d0564542100  lea     rax,[win32kfull!WPP_RECORDER_INITIALIZED (00000001`403b5b10)]
+00000001`401a06ac 4839055d542100  cmp     qword ptr [win32kfull!WPP_RECORDER_INITIALIZED (00000001`403b5b10)],rax
+00000001`401a06b3 410f95c4        setne   r12b
+00000001`401a06b7 4584ff          test    r15b,r15b
+00000001`401a06ba 7505            jne     win32kfull!CForegroundLaunch::_CheckAllowForeground+0x43d (00000001`401a06c1)
+
+win32kfull!CForegroundLaunch::_CheckAllowForeground+0x438:
+00000001`401a06bc 4584e4          test    r12b,r12b
+00000001`401a06bf 7451            je      win32kfull!CForegroundLaunch::_CheckAllowForeground+0x48e (00000001`401a0712)
+
+win32kfull!CForegroundLaunch::_CheckAllowForeground+0x43d:
+00000001`401a06c1 418b5e38        mov     ebx,dword ptr [r14+38h]
+00000001`401a06c5 48ff15a4592300  call    qword ptr [win32kfull!_imp_W32GetUserSessionState (00000001`403d6070)]
+00000001`401a06cc 0f1f440000      nop     dword ptr [rax+rax]
+00000001`401a06d1 895c2440        mov     dword ptr [rsp+40h],ebx
+00000001`401a06d5 488d0d94f11c00  lea     rcx,[win32kfull!WPP_be53be3051cc3afe89ac48a33e4f3eff_Traceguids (00000001`4036f870)]
+00000001`401a06dc 48894c2438      mov     qword ptr [rsp+38h],rcx
+00000001`401a06e1 458ac4          mov     r8b,r12b
+00000001`401a06e4 488b0d1d542100  mov     rcx,qword ptr [win32kfull!WPP_GLOBAL_Control (00000001`403b5b08)]
+00000001`401a06eb 418ad7          mov     dl,r15b
+00000001`401a06ee 4c8b88c8130100  mov     r9,qword ptr [rax+113C8h]
+00000001`401a06f5 66c74424304400  mov     word ptr [rsp+30h],44h
+00000001`401a06fc c744242802000000 mov     dword ptr [rsp+28h],2
+00000001`401a0704 488b4918        mov     rcx,qword ptr [rcx+18h]
+00000001`401a0708 c644242004      mov     byte ptr [rsp+20h],4
+00000001`401a070d e89eeeffff      call    win32kfull!WPP_RECORDER_AND_TRACE_SF_D (00000001`4019f5b0)
+
+win32kfull!CForegroundLaunch::_CheckAllowForeground+0x48e:
+00000001`401a0712 410fba6e0c13    bts     dword ptr [r14+0Ch],13h
+00000001`401a0718 448b6577        mov     r12d,dword ptr [rbp+77h]
+00000001`401a071c e9c5fdffff      jmp     win32kfull!CForegroundLaunch::_CheckAllowForeground+0x262 (00000001`401a04e6)
+
+win32kfull!CForegroundLaunch::_CheckAllowForeground+0x49d:
+00000001`401a0721 418af7          mov     sil,r15b
+
+win32kfull!CForegroundLaunch::_CheckAllowForeground+0x4a0:
+00000001`401a0724 488b5d7f        mov     rbx,qword ptr [rbp+7Fh]
+
+win32kfull!CForegroundLaunch::_CheckAllowForeground+0x4a4:
+00000001`401a0728 4c397ddf        cmp     qword ptr [rbp-21h],r15
+00000001`401a072c 741f            je      win32kfull!CForegroundLaunch::_CheckAllowForeground+0x4c9 (00000001`401a074d)
+
+win32kfull!CForegroundLaunch::_CheckAllowForeground+0x4aa:
+00000001`401a072e f645db08        test    byte ptr [rbp-25h],8
+00000001`401a0732 7410            je      win32kfull!CForegroundLaunch::_CheckAllowForeground+0x4c0 (00000001`401a0744)
+
+win32kfull!CForegroundLaunch::_CheckAllowForeground+0x4b0:
+00000001`401a0734 e8370fe9ff      call    win32kfull!PtiCurrent (00000001`40031670)
+00000001`401a0739 488b4df7        mov     rcx,qword ptr [rbp-9]
+00000001`401a073d 48898880010000  mov     qword ptr [rax+180h],rcx
+
+win32kfull!CForegroundLaunch::_CheckAllowForeground+0x4c0:
+00000001`401a0744 488d4dc7        lea     rcx,[rbp-39h]
+00000001`401a0748 e833270d00      call    win32kfull!CLockProcessByPid::_Cleanup (00000001`40272e80)
+
+win32kfull!CForegroundLaunch::_CheckAllowForeground+0x4c9:
+00000001`401a074d 4084f6          test    sil,sil
+00000001`401a0750 0f85d1050000    jne     win32kfull!CForegroundLaunch::_CheckAllowForeground+0xaa3 (00000001`401a0d27)
+
+win32kfull!CForegroundLaunch::_CheckAllowForeground+0x4d2:
+00000001`401a0756 418bc4          mov     eax,r12d
+00000001`401a0759 4403e7          add     r12d,edi
+00000001`401a075c 44896577        mov     dword ptr [rbp+77h],r12d
+00000001`401a0760 83f805          cmp     eax,5
+00000001`401a0763 0f8231fcffff    jb      win32kfull!CForegroundLaunch::_CheckAllowForeground+0x116 (00000001`401a039a)
+
+win32kfull!CForegroundLaunch::_CheckAllowForeground+0x4e5:
+00000001`401a0769 4c8d25a0532100  lea     r12,[win32kfull!WPP_RECORDER_INITIALIZED (00000001`403b5b10)]
+
+win32kfull!CForegroundLaunch::_CheckAllowForeground+0x4ec:
+00000001`401a0770 41bd40000000    mov     r13d,40h
+
+win32kfull!CForegroundLaunch::_CheckAllowForeground+0x4f2:
+00000001`401a0776 488b0d8b532100  mov     rcx,qword ptr [win32kfull!WPP_GLOBAL_Control (00000001`403b5b08)]
+00000001`401a077d 488d0584532100  lea     rax,[win32kfull!WPP_GLOBAL_Control (00000001`403b5b08)]
+00000001`401a0784 41be02000000    mov     r14d,2
+00000001`401a078a 483bc8          cmp     rcx,rax
+00000001`401a078d 7411            je      win32kfull!CForegroundLaunch::_CheckAllowForeground+0x51c (00000001`401a07a0)
+
+win32kfull!CForegroundLaunch::_CheckAllowForeground+0x50b:
+00000001`401a078f 8b412c          mov     eax,dword ptr [rcx+2Ch]
+00000001`401a0792 4184c6          test    r14b,al
+00000001`401a0795 7409            je      win32kfull!CForegroundLaunch::_CheckAllowForeground+0x51c (00000001`401a07a0)
+
+win32kfull!CForegroundLaunch::_CheckAllowForeground+0x513:
+00000001`401a0797 80792904        cmp     byte ptr [rcx+29h],4
+00000001`401a079b 408adf          mov     bl,dil
+00000001`401a079e 7303            jae     win32kfull!CForegroundLaunch::_CheckAllowForeground+0x51f (00000001`401a07a3)
+
+win32kfull!CForegroundLaunch::_CheckAllowForeground+0x51c:
+00000001`401a07a0 418adf          mov     bl,r15b
+
+win32kfull!CForegroundLaunch::_CheckAllowForeground+0x51f:
+00000001`401a07a3 4c392566532100  cmp     qword ptr [win32kfull!WPP_RECORDER_INITIALIZED (00000001`403b5b10)],r12
+00000001`401a07aa 400f95c6        setne   sil
+00000001`401a07ae 84db            test    bl,bl
+00000001`401a07b0 7505            jne     win32kfull!CForegroundLaunch::_CheckAllowForeground+0x533 (00000001`401a07b7)
+
+win32kfull!CForegroundLaunch::_CheckAllowForeground+0x52e:
+00000001`401a07b2 4084f6          test    sil,sil
+00000001`401a07b5 7445            je      win32kfull!CForegroundLaunch::_CheckAllowForeground+0x578 (00000001`401a07fc)
+
+win32kfull!CForegroundLaunch::_CheckAllowForeground+0x533:
+00000001`401a07b7 48ff15b2582300  call    qword ptr [win32kfull!_imp_W32GetUserSessionState (00000001`403d6070)]
+00000001`401a07be 0f1f440000      nop     dword ptr [rax+rax]
+00000001`401a07c3 488d0da6f01c00  lea     rcx,[win32kfull!WPP_be53be3051cc3afe89ac48a33e4f3eff_Traceguids (00000001`4036f870)]
+00000001`401a07ca 448ac6          mov     r8b,sil
+00000001`401a07cd 48894c2438      mov     qword ptr [rsp+38h],rcx
+00000001`401a07d2 8ad3            mov     dl,bl
+00000001`401a07d4 488b0d2d532100  mov     rcx,qword ptr [win32kfull!WPP_GLOBAL_Control (00000001`403b5b08)]
+00000001`401a07db 4c8b88c8130100  mov     r9,qword ptr [rax+113C8h]
+00000001`401a07e2 66c74424304500  mov     word ptr [rsp+30h],45h
+00000001`401a07e9 4489742428      mov     dword ptr [rsp+28h],r14d
+00000001`401a07ee 488b4918        mov     rcx,qword ptr [rcx+18h]
+00000001`401a07f2 c644242004      mov     byte ptr [rsp+20h],4
+00000001`401a07f7 e8ecb1f0ff      call    win32kfull!WPP_RECORDER_AND_TRACE_SF_ (00000001`400ab9e8)
+
+win32kfull!CForegroundLaunch::_CheckAllowForeground+0x578:
+00000001`401a07fc 48ff156d582300  call    qword ptr [win32kfull!_imp_W32GetUserSessionState (00000001`403d6070)]
+00000001`401a0803 0f1f440000      nop     dword ptr [rax+rax]
+00000001`401a0808 4c39b8704e0000  cmp     qword ptr [rax+4E70h],r15
+00000001`401a080f 0f840d050000    je      win32kfull!CForegroundLaunch::_CheckAllowForeground+0xa9e (00000001`401a0d22)
+
+win32kfull!CForegroundLaunch::_CheckAllowForeground+0x591:
+00000001`401a0815 48ff1554582300  call    qword ptr [win32kfull!_imp_W32GetUserSessionState (00000001`403d6070)]
+00000001`401a081c 0f1f440000      nop     dword ptr [rax+rax]
+00000001`401a0821 488b80704e0000  mov     rax,qword ptr [rax+4E70h]
+00000001`401a0828 81b8a002000000040000 cmp dword ptr [rax+2A0h],400h
+00000001`401a0832 0f87ea040000    ja      win32kfull!CForegroundLaunch::_CheckAllowForeground+0xa9e (00000001`401a0d22)
+
+win32kfull!CForegroundLaunch::_CheckAllowForeground+0x5b4:
+00000001`401a0838 8b80b0020000    mov     eax,dword ptr [rax+2B0h]
+00000001`401a083e 4184c5          test    r13b,al
+00000001`401a0841 0f84db040000    je      win32kfull!CForegroundLaunch::_CheckAllowForeground+0xa9e (00000001`401a0d22)
+
+win32kfull!CForegroundLaunch::_CheckAllowForeground+0x5c3:
+00000001`401a0847 488b0dba522100  mov     rcx,qword ptr [win32kfull!WPP_GLOBAL_Control (00000001`403b5b08)]
+00000001`401a084e 488d05b3522100  lea     rax,[win32kfull!WPP_GLOBAL_Control (00000001`403b5b08)]
+00000001`401a0855 483bc8          cmp     rcx,rax
+00000001`401a0858 7411            je      win32kfull!CForegroundLaunch::_CheckAllowForeground+0x5e7 (00000001`401a086b)
+
+win32kfull!CForegroundLaunch::_CheckAllowForeground+0x5d6:
+00000001`401a085a 8b412c          mov     eax,dword ptr [rcx+2Ch]
+00000001`401a085d 4184c6          test    r14b,al
+00000001`401a0860 7409            je      win32kfull!CForegroundLaunch::_CheckAllowForeground+0x5e7 (00000001`401a086b)
+
+win32kfull!CForegroundLaunch::_CheckAllowForeground+0x5de:
+00000001`401a0862 80792904        cmp     byte ptr [rcx+29h],4
+00000001`401a0866 408adf          mov     bl,dil
+00000001`401a0869 7303            jae     win32kfull!CForegroundLaunch::_CheckAllowForeground+0x5ea (00000001`401a086e)
+
+win32kfull!CForegroundLaunch::_CheckAllowForeground+0x5e7:
+00000001`401a086b 418adf          mov     bl,r15b
+
+win32kfull!CForegroundLaunch::_CheckAllowForeground+0x5ea:
+00000001`401a086e 4c39259b522100  cmp     qword ptr [win32kfull!WPP_RECORDER_INITIALIZED (00000001`403b5b10)],r12
+00000001`401a0875 400f95c6        setne   sil
+00000001`401a0879 84db            test    bl,bl
+00000001`401a087b 7505            jne     win32kfull!CForegroundLaunch::_CheckAllowForeground+0x5fe (00000001`401a0882)
+
+win32kfull!CForegroundLaunch::_CheckAllowForeground+0x5f9:
+00000001`401a087d 4084f6          test    sil,sil
+00000001`401a0880 7445            je      win32kfull!CForegroundLaunch::_CheckAllowForeground+0x643 (00000001`401a08c7)
+
+win32kfull!CForegroundLaunch::_CheckAllowForeground+0x5fe:
+00000001`401a0882 48ff15e7572300  call    qword ptr [win32kfull!_imp_W32GetUserSessionState (00000001`403d6070)]
+00000001`401a0889 0f1f440000      nop     dword ptr [rax+rax]
+00000001`401a088e 488b0d73522100  mov     rcx,qword ptr [win32kfull!WPP_GLOBAL_Control (00000001`403b5b08)]
+00000001`401a0895 448ac6          mov     r8b,sil
+00000001`401a0898 8ad3            mov     dl,bl
+00000001`401a089a 4c8b88c8130100  mov     r9,qword ptr [rax+113C8h]
+00000001`401a08a1 488d05f0ef1c00  lea     rax,[win32kfull!WPP_6b23b1c73d3937034d82bc6ec448c1e4_Traceguids (00000001`4036f898)]
+00000001`401a08a8 488b4918        mov     rcx,qword ptr [rcx+18h]
+00000001`401a08ac 4889442438      mov     qword ptr [rsp+38h],rax
+00000001`401a08b1 66c74424307400  mov     word ptr [rsp+30h],74h
+00000001`401a08b8 4489742428      mov     dword ptr [rsp+28h],r14d
+00000001`401a08bd c644242004      mov     byte ptr [rsp+20h],4
+00000001`401a08c2 e821b1f0ff      call    win32kfull!WPP_RECORDER_AND_TRACE_SF_ (00000001`400ab9e8)
+
+win32kfull!CForegroundLaunch::_CheckAllowForeground+0x643:
+00000001`401a08c7 408af7          mov     sil,dil
+00000001`401a08ca e95f040000      jmp     win32kfull!CForegroundLaunch::_CheckAllowForeground+0xaaa (00000001`401a0d2e)
+
+win32kfull!CForegroundLaunch::_CheckAllowForeground+0x64b:
+00000001`401a08cf 488b0d32522100  mov     rcx,qword ptr [win32kfull!WPP_GLOBAL_Control (00000001`403b5b08)]
+00000001`401a08d6 488d052b522100  lea     rax,[win32kfull!WPP_GLOBAL_Control (00000001`403b5b08)]
+00000001`401a08dd 483bc8          cmp     rcx,rax
+00000001`401a08e0 7410            je      win32kfull!CForegroundLaunch::_CheckAllowForeground+0x66e (00000001`401a08f2)
+
+win32kfull!CForegroundLaunch::_CheckAllowForeground+0x65e:
+00000001`401a08e2 8b412c          mov     eax,dword ptr [rcx+2Ch]
+00000001`401a08e5 a802            test    al,2
+00000001`401a08e7 7409            je      win32kfull!CForegroundLaunch::_CheckAllowForeground+0x66e (00000001`401a08f2)
+
+win32kfull!CForegroundLaunch::_CheckAllowForeground+0x665:
+00000001`401a08e9 80792904        cmp     byte ptr [rcx+29h],4
+00000001`401a08ed 408adf          mov     bl,dil
+00000001`401a08f0 7303            jae     win32kfull!CForegroundLaunch::_CheckAllowForeground+0x671 (00000001`401a08f5)
+
+win32kfull!CForegroundLaunch::_CheckAllowForeground+0x66e:
+00000001`401a08f2 418adf          mov     bl,r15b
+
+win32kfull!CForegroundLaunch::_CheckAllowForeground+0x671:
+00000001`401a08f5 4c8d2514522100  lea     r12,[win32kfull!WPP_RECORDER_INITIALIZED (00000001`403b5b10)]
+00000001`401a08fc 4c39250d522100  cmp     qword ptr [win32kfull!WPP_RECORDER_INITIALIZED (00000001`403b5b10)],r12
+00000001`401a0903 400f95c6        setne   sil
+00000001`401a0907 84db            test    bl,bl
+00000001`401a0909 7505            jne     win32kfull!CForegroundLaunch::_CheckAllowForeground+0x68c (00000001`401a0910)
+
+win32kfull!CForegroundLaunch::_CheckAllowForeground+0x687:
+00000001`401a090b 4084f6          test    sil,sil
+00000001`401a090e 744f            je      win32kfull!CForegroundLaunch::_CheckAllowForeground+0x6db (00000001`401a095f)
+
+win32kfull!CForegroundLaunch::_CheckAllowForeground+0x68c:
+00000001`401a0910 48ff1559572300  call    qword ptr [win32kfull!_imp_W32GetUserSessionState (00000001`403d6070)]
+00000001`401a0917 0f1f440000      nop     dword ptr [rax+rax]
+00000001`401a091c 488b0de5512100  mov     rcx,qword ptr [win32kfull!WPP_GLOBAL_Control (00000001`403b5b08)]
+00000001`401a0923 41bd40000000    mov     r13d,40h
+00000001`401a0929 448ac6          mov     r8b,sil
+00000001`401a092c 8ad3            mov     dl,bl
+00000001`401a092e 4c8b88c8130100  mov     r9,qword ptr [rax+113C8h]
+00000001`401a0935 488d0534ef1c00  lea     rax,[win32kfull!WPP_be53be3051cc3afe89ac48a33e4f3eff_Traceguids (00000001`4036f870)]
+00000001`401a093c 488b4918        mov     rcx,qword ptr [rcx+18h]
+00000001`401a0940 4889442438      mov     qword ptr [rsp+38h],rax
+00000001`401a0945 6644896c2430    mov     word ptr [rsp+30h],r13w
+00000001`401a094b c744242802000000 mov     dword ptr [rsp+28h],2
+00000001`401a0953 c644242004      mov     byte ptr [rsp+20h],4
+00000001`401a0958 e88bb0f0ff      call    win32kfull!WPP_RECORDER_AND_TRACE_SF_ (00000001`400ab9e8)
+00000001`401a095d eb06            jmp     win32kfull!CForegroundLaunch::_CheckAllowForeground+0x6e1 (00000001`401a0965)
+
+win32kfull!CForegroundLaunch::_CheckAllowForeground+0x6db:
+00000001`401a095f 41bd40000000    mov     r13d,40h
+
+win32kfull!CForegroundLaunch::_CheckAllowForeground+0x6e1:
+00000001`401a0965 488d4dc7        lea     rcx,[rbp-39h]
+00000001`401a0969 e816280400      call    win32kfull!CLockProcessByPid::~CLockProcessByPid (00000001`401e3184)
+00000001`401a096e e903feffff      jmp     win32kfull!CForegroundLaunch::_CheckAllowForeground+0x4f2 (00000001`401a0776)
+
+win32kfull!CForegroundLaunch::_CheckAllowForeground+0x6ef:
+00000001`401a0973 488b0d8e512100  mov     rcx,qword ptr [win32kfull!WPP_GLOBAL_Control (00000001`403b5b08)]
+00000001`401a097a 488d0587512100  lea     rax,[win32kfull!WPP_GLOBAL_Control (00000001`403b5b08)]
+00000001`401a0981 483bc8          cmp     rcx,rax
+00000001`401a0984 7410            je      win32kfull!CForegroundLaunch::_CheckAllowForeground+0x712 (00000001`401a0996)
+
+win32kfull!CForegroundLaunch::_CheckAllowForeground+0x702:
+00000001`401a0986 8b412c          mov     eax,dword ptr [rcx+2Ch]
+00000001`401a0989 a802            test    al,2
+00000001`401a098b 7409            je      win32kfull!CForegroundLaunch::_CheckAllowForeground+0x712 (00000001`401a0996)
+
+win32kfull!CForegroundLaunch::_CheckAllowForeground+0x709:
+00000001`401a098d 80792904        cmp     byte ptr [rcx+29h],4
+00000001`401a0991 408adf          mov     bl,dil
+00000001`401a0994 7303            jae     win32kfull!CForegroundLaunch::_CheckAllowForeground+0x715 (00000001`401a0999)
+
+win32kfull!CForegroundLaunch::_CheckAllowForeground+0x712:
+00000001`401a0996 418adf          mov     bl,r15b
+
+win32kfull!CForegroundLaunch::_CheckAllowForeground+0x715:
+00000001`401a0999 488d0570512100  lea     rax,[win32kfull!WPP_RECORDER_INITIALIZED (00000001`403b5b10)]
+00000001`401a09a0 48390569512100  cmp     qword ptr [win32kfull!WPP_RECORDER_INITIALIZED (00000001`403b5b10)],rax
+00000001`401a09a7 410f95c6        setne   r14b
+00000001`401a09ab 84db            test    bl,bl
+00000001`401a09ad 7509            jne     win32kfull!CForegroundLaunch::_CheckAllowForeground+0x734 (00000001`401a09b8)
+
+win32kfull!CForegroundLaunch::_CheckAllowForeground+0x72b:
+00000001`401a09af 4584f6          test    r14b,r14b
+00000001`401a09b2 0f8437030000    je      win32kfull!CForegroundLaunch::_CheckAllowForeground+0xa6b (00000001`401a0cef)
+
+win32kfull!CForegroundLaunch::_CheckAllowForeground+0x734:
+00000001`401a09b8 48ff15b1562300  call    qword ptr [win32kfull!_imp_W32GetUserSessionState (00000001`403d6070)]
+00000001`401a09bf 0f1f440000      nop     dword ptr [rax+rax]
+00000001`401a09c4 488d0da5ee1c00  lea     rcx,[win32kfull!WPP_be53be3051cc3afe89ac48a33e4f3eff_Traceguids (00000001`4036f870)]
+00000001`401a09cb 48894c2438      mov     qword ptr [rsp+38h],rcx
+00000001`401a09d0 66c74424303f00  mov     word ptr [rsp+30h],3Fh
+00000001`401a09d7 e9ea020000      jmp     win32kfull!CForegroundLaunch::_CheckAllowForeground+0xa42 (00000001`401a0cc6)
+
+win32kfull!CForegroundLaunch::_CheckAllowForeground+0x758:
+00000001`401a09dc 488b0d25512100  mov     rcx,qword ptr [win32kfull!WPP_GLOBAL_Control (00000001`403b5b08)]
+00000001`401a09e3 488d051e512100  lea     rax,[win32kfull!WPP_GLOBAL_Control (00000001`403b5b08)]
+00000001`401a09ea 41bc02000000    mov     r12d,2
+00000001`401a09f0 483bc8          cmp     rcx,rax
+00000001`401a09f3 7411            je      win32kfull!CForegroundLaunch::_CheckAllowForeground+0x782 (00000001`401a0a06)
+
+win32kfull!CForegroundLaunch::_CheckAllowForeground+0x771:
+00000001`401a09f5 8b412c          mov     eax,dword ptr [rcx+2Ch]
+00000001`401a09f8 4184c4          test    r12b,al
+00000001`401a09fb 7409            je      win32kfull!CForegroundLaunch::_CheckAllowForeground+0x782 (00000001`401a0a06)
+
+win32kfull!CForegroundLaunch::_CheckAllowForeground+0x779:
+00000001`401a09fd 80792904        cmp     byte ptr [rcx+29h],4
+00000001`401a0a01 408adf          mov     bl,dil
+00000001`401a0a04 7303            jae     win32kfull!CForegroundLaunch::_CheckAllowForeground+0x785 (00000001`401a0a09)
+
+win32kfull!CForegroundLaunch::_CheckAllowForeground+0x782:
+00000001`401a0a06 418adf          mov     bl,r15b
+
+win32kfull!CForegroundLaunch::_CheckAllowForeground+0x785:
+00000001`401a0a09 488d0500512100  lea     rax,[win32kfull!WPP_RECORDER_INITIALIZED (00000001`403b5b10)]
+00000001`401a0a10 483905f9502100  cmp     qword ptr [win32kfull!WPP_RECORDER_INITIALIZED (00000001`403b5b10)],rax
+00000001`401a0a17 410f95c6        setne   r14b
+00000001`401a0a1b 84db            test    bl,bl
+00000001`401a0a1d 7505            jne     win32kfull!CForegroundLaunch::_CheckAllowForeground+0x7a0 (00000001`401a0a24)
+
+win32kfull!CForegroundLaunch::_CheckAllowForeground+0x79b:
+00000001`401a0a1f 4584f6          test    r14b,r14b
+00000001`401a0a22 7445            je      win32kfull!CForegroundLaunch::_CheckAllowForeground+0x7e5 (00000001`401a0a69)
+
+win32kfull!CForegroundLaunch::_CheckAllowForeground+0x7a0:
+00000001`401a0a24 48ff1545562300  call    qword ptr [win32kfull!_imp_W32GetUserSessionState (00000001`403d6070)]
+00000001`401a0a2b 0f1f440000      nop     dword ptr [rax+rax]
+00000001`401a0a30 488d0d39ee1c00  lea     rcx,[win32kfull!WPP_be53be3051cc3afe89ac48a33e4f3eff_Traceguids (00000001`4036f870)]
+00000001`401a0a37 458ac6          mov     r8b,r14b
+00000001`401a0a3a 48894c2438      mov     qword ptr [rsp+38h],rcx
+00000001`401a0a3f 8ad3            mov     dl,bl
+00000001`401a0a41 488b0dc0502100  mov     rcx,qword ptr [win32kfull!WPP_GLOBAL_Control (00000001`403b5b08)]
+00000001`401a0a48 4c8b88c8130100  mov     r9,qword ptr [rax+113C8h]
+00000001`401a0a4f 66c74424303a00  mov     word ptr [rsp+30h],3Ah
+00000001`401a0a56 4489642428      mov     dword ptr [rsp+28h],r12d
+00000001`401a0a5b 488b4918        mov     rcx,qword ptr [rcx+18h]
+00000001`401a0a5f c644242004      mov     byte ptr [rsp+20h],4
+00000001`401a0a64 e87faff0ff      call    win32kfull!WPP_RECORDER_AND_TRACE_SF_ (00000001`400ab9e8)
+
+win32kfull!CForegroundLaunch::_CheckAllowForeground+0x7e5:
+00000001`401a0a69 48ff1500562300  call    qword ptr [win32kfull!_imp_W32GetUserSessionState (00000001`403d6070)]
+00000001`401a0a70 0f1f440000      nop     dword ptr [rax+rax]
+00000001`401a0a75 b900200000      mov     ecx,2000h
+00000001`401a0a7a 488b98f00b0000  mov     rbx,qword ptr [rax+0BF0h]
+00000001`401a0a81 48ff15588b2300  call    qword ptr [win32kfull!_imp_UPDWORDPointer (00000001`403d95e0)]
+00000001`401a0a88 0f1f440000      nop     dword ptr [rax+rax]
+00000001`401a0a8d 488bcb          mov     rcx,rbx
+00000001`401a0a90 8b10            mov     edx,dword ptr [rax]
+00000001`401a0a92 48ff1517872300  call    qword ptr [win32kfull!_imp_?IsTimeFromLastInputEventCInputGlobalsQEBA_NKZ (00000001`403d91b0)]
+00000001`401a0a99 0f1f440000      nop     dword ptr [rax+rax]
+00000001`401a0a9e 84c0            test    al,al
+00000001`401a0aa0 7467            je      win32kfull!CForegroundLaunch::_CheckAllowForeground+0x885 (00000001`401a0b09)
+
+win32kfull!CForegroundLaunch::_CheckAllowForeground+0x81e:
+00000001`401a0aa2 488b0d5f502100  mov     rcx,qword ptr [win32kfull!WPP_GLOBAL_Control (00000001`403b5b08)]
+00000001`401a0aa9 488d0558502100  lea     rax,[win32kfull!WPP_GLOBAL_Control (00000001`403b5b08)]
+00000001`401a0ab0 483bc8          cmp     rcx,rax
+00000001`401a0ab3 7411            je      win32kfull!CForegroundLaunch::_CheckAllowForeground+0x842 (00000001`401a0ac6)
+
+win32kfull!CForegroundLaunch::_CheckAllowForeground+0x831:
+00000001`401a0ab5 8b412c          mov     eax,dword ptr [rcx+2Ch]
+00000001`401a0ab8 4184c4          test    r12b,al
+00000001`401a0abb 7409            je      win32kfull!CForegroundLaunch::_CheckAllowForeground+0x842 (00000001`401a0ac6)
+
+win32kfull!CForegroundLaunch::_CheckAllowForeground+0x839:
+00000001`401a0abd 80792904        cmp     byte ptr [rcx+29h],4
+00000001`401a0ac1 408adf          mov     bl,dil
+00000001`401a0ac4 7303            jae     win32kfull!CForegroundLaunch::_CheckAllowForeground+0x845 (00000001`401a0ac9)
+
+win32kfull!CForegroundLaunch::_CheckAllowForeground+0x842:
+00000001`401a0ac6 418adf          mov     bl,r15b
+
+win32kfull!CForegroundLaunch::_CheckAllowForeground+0x845:
+00000001`401a0ac9 488d0540502100  lea     rax,[win32kfull!WPP_RECORDER_INITIALIZED (00000001`403b5b10)]
+00000001`401a0ad0 48390539502100  cmp     qword ptr [win32kfull!WPP_RECORDER_INITIALIZED (00000001`403b5b10)],rax
+00000001`401a0ad7 400f95c6        setne   sil
+00000001`401a0adb 84db            test    bl,bl
+00000001`401a0add 7509            jne     win32kfull!CForegroundLaunch::_CheckAllowForeground+0x864 (00000001`401a0ae8)
+
+win32kfull!CForegroundLaunch::_CheckAllowForeground+0x85b:
+00000001`401a0adf 4084f6          test    sil,sil
+00000001`401a0ae2 0f84c1000000    je      win32kfull!CForegroundLaunch::_CheckAllowForeground+0x925 (00000001`401a0ba9)
+
+win32kfull!CForegroundLaunch::_CheckAllowForeground+0x864:
+00000001`401a0ae8 48ff1581552300  call    qword ptr [win32kfull!_imp_W32GetUserSessionState (00000001`403d6070)]
+00000001`401a0aef 0f1f440000      nop     dword ptr [rax+rax]
+00000001`401a0af4 488d0d75ed1c00  lea     rcx,[win32kfull!WPP_be53be3051cc3afe89ac48a33e4f3eff_Traceguids (00000001`4036f870)]
+00000001`401a0afb 48894c2438      mov     qword ptr [rsp+38h],rcx
+00000001`401a0b00 66c74424303b00  mov     word ptr [rsp+30h],3Bh
+00000001`401a0b07 eb7a            jmp     win32kfull!CForegroundLaunch::_CheckAllowForeground+0x8ff (00000001`401a0b83)
+
+win32kfull!CForegroundLaunch::_CheckAllowForeground+0x885:
+00000001`401a0b09 4584ed          test    r13b,r13b
+00000001`401a0b0c 0f8426010000    je      win32kfull!CForegroundLaunch::_CheckAllowForeground+0x9b4 (00000001`401a0c38)
+
+win32kfull!CForegroundLaunch::_CheckAllowForeground+0x88e:
+00000001`401a0b12 488b456f        mov     rax,qword ptr [rbp+6Fh]
+00000001`401a0b16 8b400c          mov     eax,dword ptr [rax+0Ch]
+00000001`401a0b19 4084c7          test    dil,al
+00000001`401a0b1c 0f848f000000    je      win32kfull!CForegroundLaunch::_CheckAllowForeground+0x92d (00000001`401a0bb1)
+
+win32kfull!CForegroundLaunch::_CheckAllowForeground+0x89e:
+00000001`401a0b22 488b0ddf4f2100  mov     rcx,qword ptr [win32kfull!WPP_GLOBAL_Control (00000001`403b5b08)]
+00000001`401a0b29 488d05d84f2100  lea     rax,[win32kfull!WPP_GLOBAL_Control (00000001`403b5b08)]
+00000001`401a0b30 483bc8          cmp     rcx,rax
+00000001`401a0b33 7411            je      win32kfull!CForegroundLaunch::_CheckAllowForeground+0x8c2 (00000001`401a0b46)
+
+win32kfull!CForegroundLaunch::_CheckAllowForeground+0x8b1:
+00000001`401a0b35 8b412c          mov     eax,dword ptr [rcx+2Ch]
+00000001`401a0b38 4184c4          test    r12b,al
+00000001`401a0b3b 7409            je      win32kfull!CForegroundLaunch::_CheckAllowForeground+0x8c2 (00000001`401a0b46)
+
+win32kfull!CForegroundLaunch::_CheckAllowForeground+0x8b9:
+00000001`401a0b3d 80792904        cmp     byte ptr [rcx+29h],4
+00000001`401a0b41 408adf          mov     bl,dil
+00000001`401a0b44 7303            jae     win32kfull!CForegroundLaunch::_CheckAllowForeground+0x8c5 (00000001`401a0b49)
+
+win32kfull!CForegroundLaunch::_CheckAllowForeground+0x8c2:
+00000001`401a0b46 418adf          mov     bl,r15b
+
+win32kfull!CForegroundLaunch::_CheckAllowForeground+0x8c5:
+00000001`401a0b49 488d05c04f2100  lea     rax,[win32kfull!WPP_RECORDER_INITIALIZED (00000001`403b5b10)]
+00000001`401a0b50 483905b94f2100  cmp     qword ptr [win32kfull!WPP_RECORDER_INITIALIZED (00000001`403b5b10)],rax
+00000001`401a0b57 400f95c6        setne   sil
+00000001`401a0b5b 84db            test    bl,bl
+00000001`401a0b5d 7505            jne     win32kfull!CForegroundLaunch::_CheckAllowForeground+0x8e0 (00000001`401a0b64)
+
+win32kfull!CForegroundLaunch::_CheckAllowForeground+0x8db:
+00000001`401a0b5f 4084f6          test    sil,sil
+00000001`401a0b62 7445            je      win32kfull!CForegroundLaunch::_CheckAllowForeground+0x925 (00000001`401a0ba9)
+
+win32kfull!CForegroundLaunch::_CheckAllowForeground+0x8e0:
+00000001`401a0b64 48ff1505552300  call    qword ptr [win32kfull!_imp_W32GetUserSessionState (00000001`403d6070)]
+00000001`401a0b6b 0f1f440000      nop     dword ptr [rax+rax]
+00000001`401a0b70 488d0df9ec1c00  lea     rcx,[win32kfull!WPP_be53be3051cc3afe89ac48a33e4f3eff_Traceguids (00000001`4036f870)]
+00000001`401a0b77 48894c2438      mov     qword ptr [rsp+38h],rcx
+00000001`401a0b7c 66c74424303c00  mov     word ptr [rsp+30h],3Ch
+
+win32kfull!CForegroundLaunch::_CheckAllowForeground+0x8ff:
+00000001`401a0b83 488b0d7e4f2100  mov     rcx,qword ptr [win32kfull!WPP_GLOBAL_Control (00000001`403b5b08)]
+00000001`401a0b8a 448ac6          mov     r8b,sil
+00000001`401a0b8d 4c8b88c8130100  mov     r9,qword ptr [rax+113C8h]
+00000001`401a0b94 8ad3            mov     dl,bl
+00000001`401a0b96 4489642428      mov     dword ptr [rsp+28h],r12d
+00000001`401a0b9b c644242004      mov     byte ptr [rsp+20h],4
+00000001`401a0ba0 488b4918        mov     rcx,qword ptr [rcx+18h]
+00000001`401a0ba4 e83faef0ff      call    win32kfull!WPP_RECORDER_AND_TRACE_SF_ (00000001`400ab9e8)
+
+win32kfull!CForegroundLaunch::_CheckAllowForeground+0x925:
+00000001`401a0ba9 408af7          mov     sil,dil
+00000001`401a0bac e987000000      jmp     win32kfull!CForegroundLaunch::_CheckAllowForeground+0x9b4 (00000001`401a0c38)
+
+win32kfull!CForegroundLaunch::_CheckAllowForeground+0x92d:
+00000001`401a0bb1 488b0d504f2100  mov     rcx,qword ptr [win32kfull!WPP_GLOBAL_Control (00000001`403b5b08)]
+00000001`401a0bb8 488d05494f2100  lea     rax,[win32kfull!WPP_GLOBAL_Control (00000001`403b5b08)]
+00000001`401a0bbf 483bc8          cmp     rcx,rax
+00000001`401a0bc2 7411            je      win32kfull!CForegroundLaunch::_CheckAllowForeground+0x951 (00000001`401a0bd5)
+
+win32kfull!CForegroundLaunch::_CheckAllowForeground+0x940:
+00000001`401a0bc4 8b412c          mov     eax,dword ptr [rcx+2Ch]
+00000001`401a0bc7 4184c4          test    r12b,al
+00000001`401a0bca 7409            je      win32kfull!CForegroundLaunch::_CheckAllowForeground+0x951 (00000001`401a0bd5)
+
+win32kfull!CForegroundLaunch::_CheckAllowForeground+0x948:
+00000001`401a0bcc 80792904        cmp     byte ptr [rcx+29h],4
+00000001`401a0bd0 408adf          mov     bl,dil
+00000001`401a0bd3 7303            jae     win32kfull!CForegroundLaunch::_CheckAllowForeground+0x954 (00000001`401a0bd8)
+
+win32kfull!CForegroundLaunch::_CheckAllowForeground+0x951:
+00000001`401a0bd5 418adf          mov     bl,r15b
+
+win32kfull!CForegroundLaunch::_CheckAllowForeground+0x954:
+00000001`401a0bd8 488d05314f2100  lea     rax,[win32kfull!WPP_RECORDER_INITIALIZED (00000001`403b5b10)]
+00000001`401a0bdf 4839052a4f2100  cmp     qword ptr [win32kfull!WPP_RECORDER_INITIALIZED (00000001`403b5b10)],rax
+00000001`401a0be6 410f95c6        setne   r14b
+00000001`401a0bea 84db            test    bl,bl
+00000001`401a0bec 7505            jne     win32kfull!CForegroundLaunch::_CheckAllowForeground+0x96f (00000001`401a0bf3)
+
+win32kfull!CForegroundLaunch::_CheckAllowForeground+0x96a:
+00000001`401a0bee 4584f6          test    r14b,r14b
+00000001`401a0bf1 7445            je      win32kfull!CForegroundLaunch::_CheckAllowForeground+0x9b4 (00000001`401a0c38)
+
+win32kfull!CForegroundLaunch::_CheckAllowForeground+0x96f:
+00000001`401a0bf3 48ff1576542300  call    qword ptr [win32kfull!_imp_W32GetUserSessionState (00000001`403d6070)]
+00000001`401a0bfa 0f1f440000      nop     dword ptr [rax+rax]
+00000001`401a0bff 488d0d6aec1c00  lea     rcx,[win32kfull!WPP_be53be3051cc3afe89ac48a33e4f3eff_Traceguids (00000001`4036f870)]
+00000001`401a0c06 458ac6          mov     r8b,r14b
+00000001`401a0c09 48894c2438      mov     qword ptr [rsp+38h],rcx
+00000001`401a0c0e 8ad3            mov     dl,bl
+00000001`401a0c10 488b0df14e2100  mov     rcx,qword ptr [win32kfull!WPP_GLOBAL_Control (00000001`403b5b08)]
+00000001`401a0c17 4c8b88c8130100  mov     r9,qword ptr [rax+113C8h]
+00000001`401a0c1e 66c74424303d00  mov     word ptr [rsp+30h],3Dh
+00000001`401a0c25 4489642428      mov     dword ptr [rsp+28h],r12d
+00000001`401a0c2a 488b4918        mov     rcx,qword ptr [rcx+18h]
+00000001`401a0c2e c644242004      mov     byte ptr [rsp+20h],4
+00000001`401a0c33 e8b0adf0ff      call    win32kfull!WPP_RECORDER_AND_TRACE_SF_ (00000001`400ab9e8)
+
+win32kfull!CForegroundLaunch::_CheckAllowForeground+0x9b4:
+00000001`401a0c38 4c397ddf        cmp     qword ptr [rbp-21h],r15
+00000001`401a0c3c 0f84cf000000    je      win32kfull!CForegroundLaunch::_CheckAllowForeground+0xa8d (00000001`401a0d11)
+
+win32kfull!CForegroundLaunch::_CheckAllowForeground+0x9be:
+00000001`401a0c42 f645db08        test    byte ptr [rbp-25h],8
+00000001`401a0c46 7410            je      win32kfull!CForegroundLaunch::_CheckAllowForeground+0x9d4 (00000001`401a0c58)
+
+win32kfull!CForegroundLaunch::_CheckAllowForeground+0x9c4:
+00000001`401a0c48 e8230ae9ff      call    win32kfull!PtiCurrent (00000001`40031670)
+00000001`401a0c4d 488b4df7        mov     rcx,qword ptr [rbp-9]
+00000001`401a0c51 48898880010000  mov     qword ptr [rax+180h],rcx
+
+win32kfull!CForegroundLaunch::_CheckAllowForeground+0x9d4:
+00000001`401a0c58 488d4dc7        lea     rcx,[rbp-39h]
+00000001`401a0c5c e81f220d00      call    win32kfull!CLockProcessByPid::_Cleanup (00000001`40272e80)
+00000001`401a0c61 e9ab000000      jmp     win32kfull!CForegroundLaunch::_CheckAllowForeground+0xa8d (00000001`401a0d11)
+
+win32kfull!CForegroundLaunch::_CheckAllowForeground+0x9e2:
+00000001`401a0c66 488b0d9b4e2100  mov     rcx,qword ptr [win32kfull!WPP_GLOBAL_Control (00000001`403b5b08)]
+00000001`401a0c6d 488d05944e2100  lea     rax,[win32kfull!WPP_GLOBAL_Control (00000001`403b5b08)]
+00000001`401a0c74 483bc8          cmp     rcx,rax
+00000001`401a0c77 7410            je      win32kfull!CForegroundLaunch::_CheckAllowForeground+0xa05 (00000001`401a0c89)
+
+win32kfull!CForegroundLaunch::_CheckAllowForeground+0x9f5:
+00000001`401a0c79 8b412c          mov     eax,dword ptr [rcx+2Ch]
+00000001`401a0c7c a802            test    al,2
+00000001`401a0c7e 7409            je      win32kfull!CForegroundLaunch::_CheckAllowForeground+0xa05 (00000001`401a0c89)
+
+win32kfull!CForegroundLaunch::_CheckAllowForeground+0x9fc:
+00000001`401a0c80 80792904        cmp     byte ptr [rcx+29h],4
+00000001`401a0c84 408adf          mov     bl,dil
+00000001`401a0c87 7303            jae     win32kfull!CForegroundLaunch::_CheckAllowForeground+0xa08 (00000001`401a0c8c)
+
+win32kfull!CForegroundLaunch::_CheckAllowForeground+0xa05:
+00000001`401a0c89 418adf          mov     bl,r15b
+
+win32kfull!CForegroundLaunch::_CheckAllowForeground+0xa08:
+00000001`401a0c8c 488d057d4e2100  lea     rax,[win32kfull!WPP_RECORDER_INITIALIZED (00000001`403b5b10)]
+00000001`401a0c93 483905764e2100  cmp     qword ptr [win32kfull!WPP_RECORDER_INITIALIZED (00000001`403b5b10)],rax
+00000001`401a0c9a 410f95c6        setne   r14b
+00000001`401a0c9e 84db            test    bl,bl
+00000001`401a0ca0 7505            jne     win32kfull!CForegroundLaunch::_CheckAllowForeground+0xa23 (00000001`401a0ca7)
+
+win32kfull!CForegroundLaunch::_CheckAllowForeground+0xa1e:
+00000001`401a0ca2 4584f6          test    r14b,r14b
+00000001`401a0ca5 7448            je      win32kfull!CForegroundLaunch::_CheckAllowForeground+0xa6b (00000001`401a0cef)
+
+win32kfull!CForegroundLaunch::_CheckAllowForeground+0xa23:
+00000001`401a0ca7 48ff15c2532300  call    qword ptr [win32kfull!_imp_W32GetUserSessionState (00000001`403d6070)]
+00000001`401a0cae 0f1f440000      nop     dword ptr [rax+rax]
+00000001`401a0cb3 488d0db6eb1c00  lea     rcx,[win32kfull!WPP_be53be3051cc3afe89ac48a33e4f3eff_Traceguids (00000001`4036f870)]
+00000001`401a0cba 48894c2438      mov     qword ptr [rsp+38h],rcx
+00000001`401a0cbf 66c74424303e00  mov     word ptr [rsp+30h],3Eh
+
+win32kfull!CForegroundLaunch::_CheckAllowForeground+0xa42:
+00000001`401a0cc6 488b0d3b4e2100  mov     rcx,qword ptr [win32kfull!WPP_GLOBAL_Control (00000001`403b5b08)]
+00000001`401a0ccd 458ac6          mov     r8b,r14b
+00000001`401a0cd0 4c8b88c8130100  mov     r9,qword ptr [rax+113C8h]
+00000001`401a0cd7 8ad3            mov     dl,bl
+00000001`401a0cd9 c744242802000000 mov     dword ptr [rsp+28h],2
+00000001`401a0ce1 c644242004      mov     byte ptr [rsp+20h],4
+00000001`401a0ce6 488b4918        mov     rcx,qword ptr [rcx+18h]
+00000001`401a0cea e8f9acf0ff      call    win32kfull!WPP_RECORDER_AND_TRACE_SF_ (00000001`400ab9e8)
+
+win32kfull!CForegroundLaunch::_CheckAllowForeground+0xa6b:
+00000001`401a0cef 488b456f        mov     rax,qword ptr [rbp+6Fh]
+00000001`401a0cf3 488b4d67        mov     rcx,qword ptr [rbp+67h]
+00000001`401a0cf7 488b10          mov     rdx,qword ptr [rax]
+00000001`401a0cfa e809e7ffff      call    win32kfull!CForegroundLaunch::_HasLegacyForegroundActivateRight (00000001`4019f408)
+00000001`401a0cff 84c0            test    al,al
+00000001`401a0d01 400fb6f6        movzx   esi,sil
+00000001`401a0d05 488d4dc7        lea     rcx,[rbp-39h]
+00000001`401a0d09 0f45f7          cmovne  esi,edi
+00000001`401a0d0c e873240400      call    win32kfull!CLockProcessByPid::~CLockProcessByPid (00000001`401e3184)
+
+win32kfull!CForegroundLaunch::_CheckAllowForeground+0xa8d:
+00000001`401a0d11 4c8d25f84d2100  lea     r12,[win32kfull!WPP_RECORDER_INITIALIZED (00000001`403b5b10)]
+00000001`401a0d18 4084f6          test    sil,sil
+00000001`401a0d1b 7511            jne     win32kfull!CForegroundLaunch::_CheckAllowForeground+0xaaa (00000001`401a0d2e)
+
+win32kfull!CForegroundLaunch::_CheckAllowForeground+0xa99:
+00000001`401a0d1d e94efaffff      jmp     win32kfull!CForegroundLaunch::_CheckAllowForeground+0x4ec (00000001`401a0770)
+
+win32kfull!CForegroundLaunch::_CheckAllowForeground+0xa9e:
+00000001`401a0d22 418af7          mov     sil,r15b
+00000001`401a0d25 eb07            jmp     win32kfull!CForegroundLaunch::_CheckAllowForeground+0xaaa (00000001`401a0d2e)
+
+win32kfull!CForegroundLaunch::_CheckAllowForeground+0xaa3:
+00000001`401a0d27 4c8d25e24d2100  lea     r12,[win32kfull!WPP_RECORDER_INITIALIZED (00000001`403b5b10)]
+
+win32kfull!CForegroundLaunch::_CheckAllowForeground+0xaaa:
+00000001`401a0d2e 488b0dd34d2100  mov     rcx,qword ptr [win32kfull!WPP_GLOBAL_Control (00000001`403b5b08)]
+00000001`401a0d35 488d05cc4d2100  lea     rax,[win32kfull!WPP_GLOBAL_Control (00000001`403b5b08)]
+00000001`401a0d3c 483bc8          cmp     rcx,rax
+00000001`401a0d3f 740d            je      win32kfull!CForegroundLaunch::_CheckAllowForeground+0xaca (00000001`401a0d4e)
+
+win32kfull!CForegroundLaunch::_CheckAllowForeground+0xabd:
+00000001`401a0d41 8b412c          mov     eax,dword ptr [rcx+2Ch]
+00000001`401a0d44 a802            test    al,2
+00000001`401a0d46 7406            je      win32kfull!CForegroundLaunch::_CheckAllowForeground+0xaca (00000001`401a0d4e)
+
+win32kfull!CForegroundLaunch::_CheckAllowForeground+0xac4:
+00000001`401a0d48 80792904        cmp     byte ptr [rcx+29h],4
+00000001`401a0d4c 7303            jae     win32kfull!CForegroundLaunch::_CheckAllowForeground+0xacd (00000001`401a0d51)
+
+win32kfull!CForegroundLaunch::_CheckAllowForeground+0xaca:
+00000001`401a0d4e 418aff          mov     dil,r15b
+
+win32kfull!CForegroundLaunch::_CheckAllowForeground+0xacd:
+00000001`401a0d51 4c3925b84d2100  cmp     qword ptr [win32kfull!WPP_RECORDER_INITIALIZED (00000001`403b5b10)],r12
+00000001`401a0d58 410f95c6        setne   r14b
+00000001`401a0d5c 4084ff          test    dil,dil
+00000001`401a0d5f 7505            jne     win32kfull!CForegroundLaunch::_CheckAllowForeground+0xae2 (00000001`401a0d66)
+
+win32kfull!CForegroundLaunch::_CheckAllowForeground+0xadd:
+00000001`401a0d61 4584f6          test    r14b,r14b
+00000001`401a0d64 7469            je      win32kfull!CForegroundLaunch::_CheckAllowForeground+0xb4b (00000001`401a0dcf)
+
+win32kfull!CForegroundLaunch::_CheckAllowForeground+0xae2:
+00000001`401a0d66 488b456f        mov     rax,qword ptr [rbp+6Fh]
+00000001`401a0d6a 8b5838          mov     ebx,dword ptr [rax+38h]
+00000001`401a0d6d 48ff15fc522300  call    qword ptr [win32kfull!_imp_W32GetUserSessionState (00000001`403d6070)]
+00000001`401a0d74 0f1f440000      nop     dword ptr [rax+rax]
+00000001`401a0d79 895c2448        mov     dword ptr [rsp+48h],ebx
+00000001`401a0d7d 488d0da8e31c00  lea     rcx,[win32kfull!`string' (00000001`4036f12c)]
+00000001`401a0d84 4084f6          test    sil,sil
+00000001`401a0d87 458ac6          mov     r8b,r14b
+00000001`401a0d8a 408ad7          mov     dl,dil
+00000001`401a0d8d 4c8b88c8130100  mov     r9,qword ptr [rax+113C8h]
+00000001`401a0d94 488d058de31c00  lea     rax,[win32kfull!`string' (00000001`4036f128)]
+00000001`401a0d9b 480f44c1        cmove   rax,rcx
+00000001`401a0d9f 488b0d624d2100  mov     rcx,qword ptr [win32kfull!WPP_GLOBAL_Control (00000001`403b5b08)]
+00000001`401a0da6 4889442440      mov     qword ptr [rsp+40h],rax
+00000001`401a0dab 488d05beea1c00  lea     rax,[win32kfull!WPP_be53be3051cc3afe89ac48a33e4f3eff_Traceguids (00000001`4036f870)]
+00000001`401a0db2 4889442438      mov     qword ptr [rsp+38h],rax
+00000001`401a0db7 66c74424304600  mov     word ptr [rsp+30h],46h
+00000001`401a0dbe 488b4918        mov     rcx,qword ptr [rcx+18h]
+00000001`401a0dc2 c744242802000000 mov     dword ptr [rsp+28h],2
+00000001`401a0dca e821000000      call    win32kfull!WPP_RECORDER_AND_TRACE_SF_sD (00000001`401a0df0)
+
+win32kfull!CForegroundLaunch::_CheckAllowForeground+0xb4b:
+00000001`401a0dcf 408ac6          mov     al,sil
+00000001`401a0dd2 4881c4b8000000  add     rsp,0B8h
+00000001`401a0dd9 415f            pop     r15
+00000001`401a0ddb 415e            pop     r14
+00000001`401a0ddd 415d            pop     r13
+00000001`401a0ddf 415c            pop     r12
+00000001`401a0de1 5f              pop     rdi
+00000001`401a0de2 5e              pop     rsi
+00000001`401a0de3 5b              pop     rbx
+00000001`401a0de4 5d              pop     rbp
+00000001`401a0de5 c3              ret
+quit:
